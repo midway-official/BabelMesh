@@ -1,0 +1,265 @@
+{
+  "status": "passed",
+  "captures": [
+    {
+      "name": "workflow",
+      "screenshot": "workflow.png",
+      "screenshot_sha256": "8add6e8b96a19861de9e26679f7a98d07ac93996633fa01f7bb19c9ab9322cfe",
+      "state": {
+        "cap_cell_type_counts": {},
+        "cap_vertices": 0,
+        "capture_checks": {
+          "colours_passed": true,
+          "dark_edge_pixels": 38134,
+          "edges_passed": true,
+          "non_opaque_composite_pixels": 0,
+          "passed": true,
+          "planar_caps_passed": true,
+          "saturated_primary_pixels": 0,
+          "tinted_surface_pixels": 223917
+        },
+        "cell_inset_fraction": 0.03500000014901161,
+        "cell_type_counts": {
+          "12": 340,
+          "13": 237
+        },
+        "cells": 577,
+        "clip_axis": 2,
+        "clip_coordinate_m": 0.05000000074505806,
+        "clip_fraction": 1.0,
+        "clip_mode": "plane",
+        "depth_sorted_transparency": true,
+        "edge_colour": "#000000",
+        "edge_style": "solid",
+        "edges_enabled": true,
+        "effective_cell_inset_fraction": 0.03500000014901161,
+        "generation_dimension": 2,
+        "hidden_edges_suppressed": true,
+        "material": "frosted",
+        "max_cap_plane_error_m": 0.0,
+        "model": "mesh",
+        "opacity": 0.6200000047683716,
+        "physical_wall_colour": "#d9ded6",
+        "projection": "orthographic",
+        "rendered_triangles": 2060,
+        "view_quaternion": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "sphere3d-perspective",
+      "screenshot": "sphere3d-perspective.png",
+      "screenshot_sha256": "a047493c04bf4a78b12b691264e6bbf31c8a87119524232a688db90c2093bc89",
+      "state": {
+        "cap_cell_type_counts": {
+          "10": 151,
+          "12": 80
+        },
+        "cap_vertices": 784,
+        "capture_checks": {
+          "colours_passed": true,
+          "dark_edge_pixels": 10634,
+          "edges_passed": true,
+          "non_opaque_composite_pixels": 0,
+          "passed": true,
+          "planar_caps_passed": true,
+          "saturated_primary_pixels": 0,
+          "tinted_surface_pixels": 82448
+        },
+        "cell_inset_fraction": 0.03500000014901161,
+        "cell_type_counts": {
+          "10": 1333,
+          "12": 920,
+          "14": 128
+        },
+        "cells": 2381,
+        "clip_axis": 2,
+        "clip_coordinate_m": 1.5,
+        "clip_fraction": 0.5,
+        "clip_mode": "plane",
+        "depth_sorted_transparency": true,
+        "edge_colour": "#000000",
+        "edge_style": "solid",
+        "edges_enabled": true,
+        "effective_cell_inset_fraction": 0.0,
+        "generation_dimension": 3,
+        "hidden_edges_suppressed": true,
+        "material": "frosted",
+        "max_cap_plane_error_m": 0.0,
+        "model": "mesh",
+        "opacity": 0.6200000047683716,
+        "physical_wall_colour": "#d9ded6",
+        "projection": "perspective",
+        "rendered_triangles": 1102,
+        "view_quaternion": [
+          0.8804771900177002,
+          0.27984514832496643,
+          -0.3647056221961975,
+          0.11591567099094391
+        ]
+      }
+    },
+    {
+      "name": "sphere3d-orthographic",
+      "screenshot": "sphere3d-orthographic.png",
+      "screenshot_sha256": "7c37ba935ebf9e3a52ede2f4de8929683684316cc9185f3566a3c3dbc8433a69",
+      "state": {
+        "cap_cell_type_counts": {
+          "10": 151,
+          "12": 80
+        },
+        "cap_vertices": 784,
+        "capture_checks": {
+          "colours_passed": true,
+          "dark_edge_pixels": 14381,
+          "edges_passed": true,
+          "non_opaque_composite_pixels": 0,
+          "passed": true,
+          "planar_caps_passed": true,
+          "saturated_primary_pixels": 0,
+          "tinted_surface_pixels": 144327
+        },
+        "cell_inset_fraction": 0.03500000014901161,
+        "cell_type_counts": {
+          "10": 1333,
+          "12": 920,
+          "14": 128
+        },
+        "cells": 2381,
+        "clip_axis": 2,
+        "clip_coordinate_m": 1.5,
+        "clip_fraction": 0.5,
+        "clip_mode": "plane",
+        "depth_sorted_transparency": true,
+        "edge_colour": "#000000",
+        "edge_style": "solid",
+        "edges_enabled": true,
+        "effective_cell_inset_fraction": 0.0,
+        "generation_dimension": 3,
+        "hidden_edges_suppressed": true,
+        "material": "frosted",
+        "max_cap_plane_error_m": 0.0,
+        "model": "mesh",
+        "opacity": 0.6200000047683716,
+        "physical_wall_colour": "#d9ded6",
+        "projection": "orthographic",
+        "rendered_triangles": 1102,
+        "view_quaternion": [
+          0.8804771900177002,
+          0.27984514832496643,
+          -0.3647056221961975,
+          0.11591567099094391
+        ]
+      }
+    },
+    {
+      "name": "cylinder2d-iso",
+      "screenshot": "cylinder2d-iso.png",
+      "screenshot_sha256": "5f38c65a1e24298c3749254fde8f27c45e9a48cfeb0052a820ccd67d741f95c6",
+      "state": {
+        "cap_cell_type_counts": {},
+        "cap_vertices": 0,
+        "capture_checks": {
+          "colours_passed": true,
+          "dark_edge_pixels": 21346,
+          "edges_passed": true,
+          "non_opaque_composite_pixels": 0,
+          "passed": true,
+          "planar_caps_passed": true,
+          "saturated_primary_pixels": 0,
+          "tinted_surface_pixels": 92305
+        },
+        "cell_inset_fraction": 0.03500000014901161,
+        "cell_type_counts": {
+          "12": 340,
+          "13": 240
+        },
+        "cells": 580,
+        "clip_axis": 2,
+        "clip_coordinate_m": 0.05000000074505806,
+        "clip_fraction": 1.0,
+        "clip_mode": "plane",
+        "depth_sorted_transparency": true,
+        "edge_colour": "#000000",
+        "edge_style": "solid",
+        "edges_enabled": true,
+        "effective_cell_inset_fraction": 0.03500000014901161,
+        "generation_dimension": 2,
+        "hidden_edges_suppressed": true,
+        "material": "frosted",
+        "max_cap_plane_error_m": 0.0,
+        "model": "mesh",
+        "opacity": 0.6200000047683716,
+        "physical_wall_colour": "#d9ded6",
+        "projection": "perspective",
+        "rendered_triangles": 2064,
+        "view_quaternion": [
+          0.8804771900177002,
+          0.27984514832496643,
+          -0.3647056221961975,
+          0.11591567099094391
+        ]
+      }
+    },
+    {
+      "name": "cad",
+      "screenshot": "cad.png",
+      "screenshot_sha256": "839190275f2193a74060e1be012c45fbf84ec4f61ec8999ef5a2a97d7c91bade",
+      "state": {
+        "cap_cell_type_counts": {},
+        "cap_vertices": 0,
+        "capture_checks": {
+          "colours_passed": true,
+          "dark_edge_pixels": 117,
+          "edges_passed": true,
+          "non_opaque_composite_pixels": 0,
+          "passed": true,
+          "planar_caps_passed": true,
+          "saturated_primary_pixels": 0,
+          "tinted_surface_pixels": 114114
+        },
+        "cell_inset_fraction": 0.03500000014901161,
+        "cell_type_counts": {},
+        "cells": 0,
+        "clip_axis": 2,
+        "clip_coordinate_m": 2.0,
+        "clip_fraction": 1.0,
+        "clip_mode": "plane",
+        "depth_sorted_transparency": true,
+        "edge_colour": "#000000",
+        "edge_style": "solid",
+        "edges_enabled": true,
+        "effective_cell_inset_fraction": 0.03500000014901161,
+        "generation_dimension": 3,
+        "hidden_edges_suppressed": true,
+        "material": "frosted",
+        "max_cap_plane_error_m": 0.0,
+        "model": "cad",
+        "opacity": 0.6200000047683716,
+        "physical_wall_colour": "#d9ded6",
+        "projection": "orthographic",
+        "rendered_triangles": 2834,
+        "view_quaternion": [
+          0.8804771900177002,
+          0.27984514832496643,
+          -0.3647056221961975,
+          0.11591567099094391
+        ]
+      }
+    }
+  ],
+  "cancellation": {
+    "cancelled": true,
+    "exit_code": 15,
+    "process_stopped": true,
+    "result_unpublished": true
+  },
+  "runtime": "Xvfb / software OpenGL",
+  "cli_sha256": "7c7d03cdbc39a5587c7019d86a153613ac8a4ba6ce2468ebce01e9b1a8c83571",
+  "gui_sha256": "5f7721203369a93d2fa821453db55ea781eb9286c84236498a456f5ff8327aca",
+  "all_cad_buttons_automatically_clicked": false
+}

@@ -1,0 +1,199 @@
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG -MMD -MP -c src/core/background_grid.cpp -o build/release/obj/core/background_grid.o
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG -MMD -MP -c src/core/cgns_io.cpp -o build/release/obj/core/cgns_io.o
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG -MMD -MP -c src/core/fluent_io.cpp -o build/release/obj/core/fluent_io.o
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG -MMD -MP -c src/core/hybrid_mesher.cpp -o build/release/obj/core/hybrid_mesher.o
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+src/core/cgns_io.cpp: In function ‘void babelmesh::writeCgns(const babelmesh::MixedMesh&, const std::filesystem::__cxx11::path&, bool)’:
+src/core/cgns_io.cpp:175:31: warning: declaration of ‘elements’ shadows a previous local [-Wshadow]
+  175 |         std::vector<cgsize_t> elements;
+      |                               ^~~~~~~~
+src/core/cgns_io.cpp:160:27: note: shadowed declaration is here
+  160 |     std::vector<cgsize_t> elements, offsets = {0};
+      |                           ^~~~~~~~
+src/core/background_grid.cpp: In lambda function:
+src/core/background_grid.cpp:205:62: warning: declaration of ‘b’ shadows a previous local [-Wshadow]
+  205 |     if (std::none_of(marking.begin(), marking.end(), [](bool b) { return b; }))
+      |                                                         ~~~~~^
+src/core/background_grid.cpp:122:15: note: shadowed declaration is here
+  122 |   const auto &b = p.at("background");
+      |               ^
+src/core/background_grid.cpp: In lambda function:
+src/core/background_grid.cpp:223:60: warning: declaration of ‘b’ shadows a previous local [-Wshadow]
+  223 |         std::sort(ids.begin(), ids.end(), [&](auto a, auto b) {
+      |                                                       ~~~~~^
+src/core/background_grid.cpp:122:15: note: shadowed declaration is here
+  122 |   const auto &b = p.at("background");
+      |               ^
+src/core/background_grid.cpp: In lambda function:
+src/core/background_grid.cpp:229:25: warning: declaration of ‘b’ shadows a previous local [-Wshadow]
+  229 |             const auto &b = leaves[ids[j]];
+      |                         ^
+src/core/background_grid.cpp:122:15: note: shadowed declaration is here
+  122 |   const auto &b = p.at("background");
+      |               ^
+src/core/background_grid.cpp: In lambda function:
+src/core/background_grid.cpp:239:62: warning: declaration of ‘b’ shadows a previous local [-Wshadow]
+  239 |     if (std::none_of(marking.begin(), marking.end(), [](bool b) { return b; }))
+      |                                                         ~~~~~^
+src/core/background_grid.cpp:122:15: note: shadowed declaration is here
+  122 |   const auto &b = p.at("background");
+      |               ^
+src/core/hybrid_mesher.cpp: In function ‘babelmesh::{anonymous}::Json babelmesh::{anonymous}::measuredLayerHeights(const std::vector<std::vector<double> >&, double, double)’:
+src/core/hybrid_mesher.cpp:733:68: warning: conversion from ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} to ‘double’ may change value [-Wconversion]
+  733 |           error[static_cast<std::size_t>(std::ceil(.95 * error.size())) - 1]},
+      |                                                          ~~~~~~~~~~^~
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG -MMD -MP -c src/core/mesh_conversion.cpp -o build/release/obj/core/mesh_conversion.o
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG -MMD -MP -c src/core/mesh_optimizer.cpp -o build/release/obj/core/mesh_optimizer.o
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG -MMD -MP -c src/core/mesh_topology_optimizer.cpp -o build/release/obj/core/mesh_topology_optimizer.o
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+src/core/mesh_optimizer.cpp: In function ‘void babelmesh::optimizeMixedMesh(babelmesh::MixedMesh&, const Json&)’:
+src/core/mesh_optimizer.cpp:582:21: warning: declaration of ‘const Vec p’ shadows a parameter [-Wshadow]
+  582 |           const Vec p(old[node][0], old[node][1], old[node][2]);
+      |                     ^
+src/core/mesh_optimizer.cpp:204:50: note: shadowed declaration is here
+  204 | void optimizeMixedMesh(MixedMesh &m, const Json &p) {
+      |                                      ~~~~~~~~~~~~^
+src/core/mesh_optimizer.cpp:636:39: warning: conversion from ‘std::vector<babelmesh::MixedCell>::size_type’ {aka ‘long unsigned int’} to ‘double’ may change value [-Wconversion]
+  636 |                std::floor(m.cells.size() * p.value("max_merge_fraction", .1))));
+      |                           ~~~~~~~~~~~~^~
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG -MMD -MP -c src/core/mixed_mesh.cpp -o build/release/obj/core/mixed_mesh.o
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+In file included from /usr/include/eigen3/Eigen/Core:294,
+                 from /usr/include/eigen3/Eigen/Geometry:11,
+                 from src/core/mesh_topology_optimizer.cpp:2:
+In constructor ‘Eigen::PlainObjectBase<Derived>::PlainObjectBase(Eigen::PlainObjectBase<Derived>&&) [with Derived = Eigen::Matrix<double, 3, 1>]’,
+    inlined from ‘Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Matrix(Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>&&) [with _Scalar = double; int _Rows = 3; int _Cols = 1; int _Options = 0; int _MaxRows = 3; int _MaxCols = 1]’ at /usr/include/eigen3/Eigen/src/Core/Matrix.h:274:30,
+    inlined from ‘babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry::Entry(babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry&&)’ at src/core/mesh_topology_optimizer.cpp:64:10,
+    inlined from ‘constexpr std::pair<_T1, _T2>::pair(_U1&&, _U2&&) [with _U1 = std::vector<int>; _U2 = babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry; typename std::enable_if<(std::_PCC<true, _T1, _T2>::_MoveConstructiblePair<_U1, _U2>() && std::_PCC<true, _T1, _T2>::_ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> = true; _T1 = const std::vector<int>; _T2 = babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry]’ at /usr/include/c++/11/bits/stl_pair.h:353:35,
+    inlined from ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = std::pair<const std::vector<int>, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry>; _Args = {std::vector<int, std::allocator<int> >, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry}; _Tp = std::_Rb_tree_node<std::pair<const std::vector<int>, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry> >]’ at /usr/include/c++/11/ext/new_allocator.h:162:4,
+    inlined from ‘static void std::allocator_traits<std::allocator<_CharT> >::construct(std::allocator_traits<std::allocator<_CharT> >::allocator_type&, _Up*, _Args&& ...) [with _Up = std::pair<const std::vector<int>, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry>; _Args = {std::vector<int, std::allocator<int> >, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry}; _Tp = std::_Rb_tree_node<std::pair<const std::vector<int>, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry> >]’ at /usr/include/c++/11/bits/alloc_traits.h:516:17,
+    inlined from ‘void std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_M_construct_node(std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Link_type, _Args&& ...) [with _Args = {std::vector<int, std::allocator<int> >, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry}; _Key = std::vector<int>; _Val = std::pair<const std::vector<int>, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry>; _KeyOfValue = std::_Select1st<std::pair<const std::vector<int>, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry> >; _Compare = std::less<std::vector<int> >; _Alloc = std::allocator<std::pair<const std::vector<int>, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry> >]’ at /usr/include/c++/11/bits/stl_tree.h:595:32,
+    inlined from ‘std::_Rb_tree_node<_Val>* std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_M_create_node(_Args&& ...) [with _Args = {std::vector<int, std::allocator<int> >, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry}; _Key = std::vector<int>; _Val = std::pair<const std::vector<int>, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry>; _KeyOfValue = std::_Select1st<std::pair<const std::vector<int>, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry> >; _Compare = std::less<std::vector<int> >; _Alloc = std::allocator<std::pair<const std::vector<int>, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry> >]’ at /usr/include/c++/11/bits/stl_tree.h:612:21,
+    inlined from ‘std::pair<std::_Rb_tree_iterator<_Val>, bool> std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_M_emplace_unique(_Args&& ...) [with _Args = {std::vector<int, std::allocator<int> >, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry}; _Key = std::vector<int>; _Val = std::pair<const std::vector<int>, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry>; _KeyOfValue = std::_Select1st<std::pair<const std::vector<int>, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry> >; _Compare = std::less<std::vector<int> >; _Alloc = std::allocator<std::pair<const std::vector<int>, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry> >]’ at /usr/include/c++/11/bits/stl_tree.h:2384:33,
+    inlined from ‘std::pair<typename std::_Rb_tree<_Key, std::pair<const _Key, _Tp>, std::_Select1st<std::pair<const _Key, _Tp> >, _Compare, typename __gnu_cxx::__alloc_traits<_Alloc>::rebind<std::pair<const _Key, _Tp> >::other>::iterator, bool> std::map<_Key, _Tp, _Compare, _Alloc>::emplace(_Args&& ...) [with _Args = {std::vector<int, std::allocator<int> >, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry}; _Key = std::vector<int>; _Tp = babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry; _Compare = std::less<std::vector<int> >; _Alloc = std::allocator<std::pair<const std::vector<int>, babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)::Entry> >]’ at /usr/include/c++/11/bits/stl_map.h:577:33,
+    inlined from ‘double babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)’ at src/core/mesh_topology_optimizer.cpp:77:24:
+/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:496:9: warning: ‘*(Eigen::DenseStorage<double, 3, 3, 1, 0>*)((char*)&<unnamed> + offsetof(Entry, Entry::neighbour.Eigen::Matrix<double, 3, 1, 0, 3, 1>::<unnamed>.Eigen::PlainObjectBase<Eigen::Matrix<double, 3, 1, 0, 3, 1> >::<unnamed>.Eigen::MatrixBase<Eigen::Matrix<double, 3, 1, 0, 3, 1> >::<unnamed>.Eigen::DenseBase<Eigen::Matrix<double, 3, 1, 0, 3, 1> >::<unnamed>.Eigen::DenseCoeffsBase<Eigen::Matrix<double, 3, 1, 0, 3, 1>, 3>::<unnamed>.Eigen::DenseCoeffsBase<Eigen::Matrix<double, 3, 1, 0, 3, 1>, 1>::<unnamed>.Eigen::DenseCoeffsBase<Eigen::Matrix<double, 3, 1, 0, 3, 1>, 0>::<unnamed>))’ may be used uninitialized [-Wmaybe-uninitialized]
+  496 |       : m_storage( std::move(other.m_storage) )
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/core/mesh_topology_optimizer.cpp: In function ‘double babelmesh::{anonymous}::localPenalty(const babelmesh::MixedMesh&, const std::vector<babelmesh::MixedCell>&, const babelmesh::{anonymous}::Cavity&)’:
+src/core/mesh_topology_optimizer.cpp:77:71: note: ‘<anonymous>’ declared here
+   77 |           faces.emplace(faceKey(ring), Entry{ring, centroid, {}, false});
+      |                                                                       ^
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG -MMD -MP -c src/cli/conversion.cpp -o build/release/obj/cli/conversion.o
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG -MMD -MP -c src/cli/hybrid.cpp -o build/release/obj/cli/hybrid.o
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG -MMD -MP -c src/cli/main.cpp -o build/release/obj/cli/main.o
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+python3 tools/check_dependencies.py dependencies/ubuntu-jammy.lock.json
+ar rcs build/release/lib/libbabelmesh.a build/release/obj/cad/preview.o build/release/obj/cad/project.o build/release/obj/core/background_grid.o build/release/obj/core/cartesian_mesh.o build/release/obj/core/cgns_io.o build/release/obj/core/face_consolidation.o build/release/obj/core/fluent_io.o build/release/obj/core/fluid_domain.o build/release/obj/core/hybrid_mesher.o build/release/obj/core/mesh_conversion.o build/release/obj/core/mesh_optimizer.o build/release/obj/core/mesh_topology_optimizer.o build/release/obj/core/mixed_mesh.o build/release/obj/core/polyhedral_audit.o build/release/obj/core/polyhedral_reconstruction.o build/release/obj/core/surface_distance.o build/release/obj/core/surface_index.o build/release/obj/core/version.o
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG tests/m1_cad_test.cpp build/release/lib/libbabelmesh.a  -L/usr/lib/x86_64-linux-gnu -lTKXDESTEP -lTKSTEP -lTKSTEP209 -lTKSTEPAttr -lTKSTEPBase -lTKXSBase -lTKXCAF -lTKCAF -lTKLCAF -lTKCDF -lTKV3d -lTKService -lTKOffset -lTKBO -lTKBool -lTKShHealing -lTKTopAlgo -lTKGeomAlgo -lTKGeomBase -lTKMesh -lTKPrim -lTKBRep -lTKG3d -lTKG2d -lTKMath -lTKernel -pthread /usr/lib/x86_64-linux-gnu/libgmsh.so.4.8 .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so -Wl,-rpath,/home/midway/BabelMesh/.cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu -o build/release/bin/m1_cad_test
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+dependency lock: Ubuntu 22.04 Jammy amd64 packages match
+build/release/bin/babelmesh-dependency-probe
+dependency_probe: OCCT=7.5.1 Eigen=3.4.0 nlohmann_json=3.10.5
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -I../BabelSim/include -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG tests/m2_cartesian_test.cpp ../BabelSim/src/core/mesh.cpp ../BabelSim/src/io/mesh_reader.cpp build/release/lib/libbabelmesh.a  -L/usr/lib/x86_64-linux-gnu -lTKXDESTEP -lTKSTEP -lTKSTEP209 -lTKSTEPAttr -lTKSTEPBase -lTKXSBase -lTKXCAF -lTKCAF -lTKLCAF -lTKCDF -lTKV3d -lTKService -lTKOffset -lTKBO -lTKBool -lTKShHealing -lTKTopAlgo -lTKGeomAlgo -lTKGeomBase -lTKMesh -lTKPrim -lTKBRep -lTKG3d -lTKG2d -lTKMath -lTKernel -pthread /usr/lib/x86_64-linux-gnu/libgmsh.so.4.8 .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so -Wl,-rpath,/home/midway/BabelMesh/.cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu -o build/release/bin/m2_cartesian_test
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+In file included from /usr/include/opencascade/TDataStd_GenericExtString.hxx:17,
+                 from /usr/include/opencascade/TDataStd_Name.hxx:20,
+                 from tests/m1_cad_test.cpp:9:
+/usr/include/opencascade/TDF_DerivedAttribute.hxx:26:39: warning: extra ‘;’ [-Wpedantic]
+   26 |   DEFINE_STANDARD_RTTIEXT(Class, Base); \
+      |                                       ^
+/usr/include/opencascade/TDataStd_Name.hxx:87:3: note: in expansion of macro ‘DEFINE_DERIVED_ATTRIBUTE’
+   87 |   DEFINE_DERIVED_ATTRIBUTE(TDataStd_Name, TDataStd_GenericExtString)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/opencascade/TDF_DerivedAttribute.hxx:26:39: warning: extra ‘;’ [-Wpedantic]
+   26 |   DEFINE_STANDARD_RTTIEXT(Class, Base); \
+      |                                       ^
+/usr/include/opencascade/XCAFDoc_DocumentTool.hxx:136:3: note: in expansion of macro ‘DEFINE_DERIVED_ATTRIBUTE’
+  136 |   DEFINE_DERIVED_ATTRIBUTE(XCAFDoc_DocumentTool,TDataStd_GenericEmpty)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/opencascade/TDF_DerivedAttribute.hxx:26:39: warning: extra ‘;’ [-Wpedantic]
+   26 |   DEFINE_STANDARD_RTTIEXT(Class, Base); \
+      |                                       ^
+/usr/include/opencascade/XCAFDoc_ShapeTool.hxx:427:3: note: in expansion of macro ‘DEFINE_DERIVED_ATTRIBUTE’
+  427 |   DEFINE_DERIVED_ATTRIBUTE(XCAFDoc_ShapeTool,TDataStd_GenericEmpty)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -I../BabelSim/include -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG tests/m3_adaptive_test.cpp ../BabelSim/src/core/mesh.cpp ../BabelSim/src/io/mesh_reader.cpp build/release/lib/libbabelmesh.a  -L/usr/lib/x86_64-linux-gnu -lTKXDESTEP -lTKSTEP -lTKSTEP209 -lTKSTEPAttr -lTKSTEPBase -lTKXSBase -lTKXCAF -lTKCAF -lTKLCAF -lTKCDF -lTKV3d -lTKService -lTKOffset -lTKBO -lTKBool -lTKShHealing -lTKTopAlgo -lTKGeomAlgo -lTKGeomBase -lTKMesh -lTKPrim -lTKBRep -lTKG3d -lTKG2d -lTKMath -lTKernel -pthread /usr/lib/x86_64-linux-gnu/libgmsh.so.4.8 .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so -Wl,-rpath,/home/midway/BabelMesh/.cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu -o build/release/bin/m3_adaptive_test
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -I../BabelSim/include -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG tests/m4_domain_test.cpp ../BabelSim/src/core/mesh.cpp ../BabelSim/src/io/mesh_reader.cpp build/release/lib/libbabelmesh.a  -L/usr/lib/x86_64-linux-gnu -lTKXDESTEP -lTKSTEP -lTKSTEP209 -lTKSTEPAttr -lTKSTEPBase -lTKXSBase -lTKXCAF -lTKCAF -lTKLCAF -lTKCDF -lTKV3d -lTKService -lTKOffset -lTKBO -lTKBool -lTKShHealing -lTKTopAlgo -lTKGeomAlgo -lTKGeomBase -lTKMesh -lTKPrim -lTKBRep -lTKG3d -lTKG2d -lTKMath -lTKernel -pthread /usr/lib/x86_64-linux-gnu/libgmsh.so.4.8 .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so -Wl,-rpath,/home/midway/BabelMesh/.cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu -o build/release/bin/m4_domain_test
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG tests/polyhedral_audit_test.cpp build/release/lib/libbabelmesh.a  -L/usr/lib/x86_64-linux-gnu -lTKXDESTEP -lTKSTEP -lTKSTEP209 -lTKSTEPAttr -lTKSTEPBase -lTKXSBase -lTKXCAF -lTKCAF -lTKLCAF -lTKCDF -lTKV3d -lTKService -lTKOffset -lTKBO -lTKBool -lTKShHealing -lTKTopAlgo -lTKGeomAlgo -lTKGeomBase -lTKMesh -lTKPrim -lTKBRep -lTKG3d -lTKG2d -lTKMath -lTKernel -pthread /usr/lib/x86_64-linux-gnu/libgmsh.so.4.8 .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so -Wl,-rpath,/home/midway/BabelMesh/.cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu -o build/release/bin/polyhedral_audit_test
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -I../BabelSim/include -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG tests/m4_feature_test.cpp ../BabelSim/src/core/mesh.cpp ../BabelSim/src/io/mesh_reader.cpp build/release/lib/libbabelmesh.a  -L/usr/lib/x86_64-linux-gnu -lTKXDESTEP -lTKSTEP -lTKSTEP209 -lTKSTEPAttr -lTKSTEPBase -lTKXSBase -lTKXCAF -lTKCAF -lTKLCAF -lTKCDF -lTKV3d -lTKService -lTKOffset -lTKBO -lTKBool -lTKShHealing -lTKTopAlgo -lTKGeomAlgo -lTKGeomBase -lTKMesh -lTKPrim -lTKBRep -lTKG3d -lTKG2d -lTKMath -lTKernel -pthread /usr/lib/x86_64-linux-gnu/libgmsh.so.4.8 .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so -Wl,-rpath,/home/midway/BabelMesh/.cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu -o build/release/bin/m4_feature_test
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/cgnslib.h -I.cache/dev-packages/cgns/usr/include/ -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG tests/surface_distance_test.cpp build/release/lib/libbabelmesh.a  -L/usr/lib/x86_64-linux-gnu -lTKXDESTEP -lTKSTEP -lTKSTEP209 -lTKSTEPAttr -lTKSTEPBase -lTKXSBase -lTKXCAF -lTKCAF -lTKLCAF -lTKCDF -lTKV3d -lTKService -lTKOffset -lTKBO -lTKBool -lTKShHealing -lTKTopAlgo -lTKGeomAlgo -lTKGeomBase -lTKMesh -lTKPrim -lTKBRep -lTKG3d -lTKG2d -lTKMath -lTKernel -pthread /usr/lib/x86_64-linux-gnu/libgmsh.so.4.8 .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so -Wl,-rpath,/home/midway/BabelMesh/.cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu -o build/release/bin/surface_distance_test
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+g++  build/release/obj/cli/conversion.o build/release/obj/cli/hybrid.o build/release/obj/cli/inspect_cad.o build/release/obj/cli/main.o build/release/lib/libbabelmesh.a -L/usr/lib/x86_64-linux-gnu -lTKXDESTEP -lTKSTEP -lTKSTEP209 -lTKSTEPAttr -lTKSTEPBase -lTKXSBase -lTKXCAF -lTKCAF -lTKLCAF -lTKCDF -lTKV3d -lTKService -lTKOffset -lTKBO -lTKBool -lTKShHealing -lTKTopAlgo -lTKGeomAlgo -lTKGeomBase -lTKMesh -lTKPrim -lTKBRep -lTKG3d -lTKG2d -lTKMath -lTKernel -pthread /usr/lib/x86_64-linux-gnu/libgmsh.so.4.8 .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so -Wl,-rpath,/home/midway/BabelMesh/.cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu -o build/release/bin/babelmesh
+build/release/bin/polyhedral_audit_test
+Polyhedral shell audit and collinear conformance tests passed
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+cc1plus: warning: .cache/dev-packages/cgns/usr/include/cgnslib.h: not a directory
+build/release/bin/surface_distance_test .
+Bidirectional surface distance: exact box, 2 mm translation, missing boundary and invalid input passed
+build/release/bin/m4_feature_test acceptance/evidence/m4-rotated/project.json
+Planar feature regression passed: angle=15 cells=10304 deviation=2.48253e-16 volume_error=1.26883e-16
+quality max_nonorth=32.76284617283158 p99_nonorth=26.240082877958184 max_skew=0.24110712398963696 p99_skew=0.23685554984135346 min_jacobian=0.6988921131600275
+Planar feature regression passed: angle=30 cells=11312 deviation=3.14018e-16 volume_error=5.45595e-15
+quality max_nonorth=30.675222621793267 p99_nonorth=26.756261784486902 max_skew=0.23971827403653864 p99_skew=0.23675567735273872 min_jacobian=0.7116916716493563
+Planar feature regression passed: angle=45 cells=10624 deviation=3.14018e-16 volume_error=1.44646e-14
+quality max_nonorth=33.71333357921295 p99_nonorth=27.28754107113084 max_skew=0.2586761378042698 p99_skew=0.23772865602528812 min_jacobian=0.6718469698098458
+python3 -c 'import jsonschema'
+python3 tests/m0_contract_test.py build/release/bin/babelmesh .
+test_acceptance_gate_statuses_have_evidence (__main__.M0ContractTest) ... ok
+test_curvature_radius_is_separate_from_cell_size (__main__.M0ContractTest) ... ok
+test_example_matches_strict_schema (__main__.M0ContractTest) ... ok
+test_explicit_surface_tolerance_contract (__main__.M0ContractTest) ... ok
+test_generate_applies_local_region_refinement (__main__.M0ContractTest) ... ok
+test_generate_cad_staircase_extraction_is_reported (__main__.M0ContractTest) ... ok
+test_generate_writes_uniform_hex_outputs (__main__.M0ContractTest) ... ok
+test_inspect_cad_writes_geometry_report (__main__.M0ContractTest) ... ok
+test_later_commands_fail_explicitly (__main__.M0ContractTest) ... ok
+test_surface_size_is_a_scalar_boundary_cell_cap (__main__.M0ContractTest) ... ok
+test_unknown_command_and_option_fail (__main__.M0ContractTest) ... ok
+test_unknown_keys_and_invalid_units_are_rejected (__main__.M0ContractTest) ... ok
+test_version_and_help (__main__.M0ContractTest) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 2.704s
+
+OK
+build/release/bin/m1_cad_test .
+[32;1m
+*******************************************************************
+******        Statistics on Transfer (Write)                 ******[0m
+[32;1m
+*******************************************************************
+******        Transfer Mode = 0  I.E.  As Is       ******[0m
+[32;1m******        Transferring Shape, ShapeType = 2                      ******[0m
+[32;1m** WorkSession : Sending all data[0m
+[32;1m Step File Name : /tmp/babelmesh-m1-cad-test/fixture-m.step(350 ents)  Write  Done[0m
+[32;1m
+*******************************************************************
+******        Statistics on Transfer (Write)                 ******[0m
+[32;1m
+*******************************************************************
+******        Transfer Mode = 0  I.E.  As Is       ******[0m
+[32;1m******        Transferring Shape, ShapeType = 0                      ******[0m
+[32;1m** WorkSession : Sending all data[0m
+[32;1m Step File Name : /tmp/babelmesh-m1-cad-test/fixture-assembly.step(382 ents)  Write  Done[0m
+M1 CAD acceptance passed: primitives, booleans, curves, faces with holes, transforms, extrude/revolve/loft/split, m-mm normalization, STEP units and assemblies, internal domains and invalid-input rejection
+build/release/bin/m2_cartesian_test
+M2 Cartesian acceptance passed: 1/8/24 hex cells, outward owner rings, metric normalization, invalid-face rejection, and BabelSim v3 reader round-trip
+build/release/bin/m3_adaptive_test
+M3 adaptive acceptance passed: analytic and CAD sizing, curvature/gap bands, thin-band intersection, 2:1 face-edge-corner balance, shared transition faces, budget rejection, and BabelSim readback
+build/release/bin/m4_domain_test
+coarse strict sphere rejected: CAD surface snapping failed strict geometry checks; target vertices=146, first violating sample deviation=0.003656 m, allowed=0.000346 m, offending wall face=121, CAD face=6, sample=(0.899993,0.899993,0.318170) [point=61,CAD face=6,target=(0.811839,0.811839,0.352551)] [point=63,CAD face=6,target=(1.000000,0.801764,0.328656)] [point=81,CAD face=6,target=(1.000000,1.000000,0.300000)] [point=79,CAD face=6,target=(0.801764,1.000000,0.328656)]
+M4 fluid-domain foundation passed: B-Rep classification, seed-connected extraction, exact CAD projection and BabelSim readback; sphere snap fraction=0.93, sampled deviation=0.000777675 m, relative volume error=1.87372e-05, quality max_nonorth=63.9377 p99_nonorth=57.3752 max_skew=0.235741 p99_skew=0.235711 min_hex_jacobian=0.100414

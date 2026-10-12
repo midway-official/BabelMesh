@@ -1,0 +1,9 @@
+[ 10%] Built target babelsim-mesh-check
+Consolidate compiler generated dependencies of target babelmesh-core
+[ 60%] Built target babelmesh-core
+[ 71%] Built target mixed_mesh_test
+[ 73%] Building CXX object CMakeFiles/babelmesh.dir/src/cli/conversion.cpp.o
+[ 76%] Linking CXX executable bin/babelmesh
+[ 84%] Built target babelmesh
+Consolidate compiler generated dependencies of target babelmesh-gui
+[100%] Built target babelmesh-gui

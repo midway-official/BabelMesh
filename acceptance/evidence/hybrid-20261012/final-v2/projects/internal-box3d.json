@@ -1,0 +1,114 @@
+{
+  "schema_version": 2,
+  "units": {
+    "length": "m",
+    "output_length": "m"
+  },
+  "cad": {
+    "imports": [],
+    "operations": [
+      {
+        "id": "channel",
+        "operation": "box",
+        "inputs": [],
+        "parameters": {
+          "minimum": [
+            0,
+            0,
+            0
+          ],
+          "maximum": [
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    ],
+    "groups": [
+      {
+        "name": "channel_wall",
+        "kind": "wall",
+        "selector": {
+          "operation_id": "channel",
+          "entity_type": "face"
+        }
+      }
+    ]
+  },
+  "fluid_domain": {
+    "mode": "internal",
+    "fluid_solids": [
+      "channel"
+    ],
+    "caps": [],
+    "seeds": [
+      [
+        0.5,
+        0.5,
+        0.5
+      ]
+    ]
+  },
+  "background": {
+    "bounds": {
+      "minimum": [
+        0,
+        0,
+        0
+      ],
+      "maximum": [
+        1,
+        1,
+        1
+      ]
+    },
+    "cell_counts": [
+      6,
+      6,
+      6
+    ],
+    "uniform_cells": true
+  },
+  "sizing": {
+    "minimum_size": 0.02,
+    "maximum_size": 0.18,
+    "max_level": 4,
+    "balance_face_neighbors": 1,
+    "sources": [],
+    "surface_size": 0.18,
+    "volume_size": 0.18
+  },
+  "boundary_layers": {
+    "enabled": false,
+    "targets": [],
+    "strict_coverage": true
+  },
+  "quality": {
+    "profile": "strict-cfd-v1",
+    "mode": "strict",
+    "max_surface_deviation_m": 0.025
+  },
+  "resources": {
+    "max_cells": 1000000,
+    "max_memory_mb": 4096,
+    "threads": 1
+  },
+  "output": {
+    "directory": "/home/midway/BabelMesh/acceptance/evidence/hybrid-20261012/final-v2/internal-box3d",
+    "formats": [
+      "babelsim-v3",
+      "vtu"
+    ],
+    "overwrite": false
+  },
+  "meshing": {
+    "dimension": 3,
+    "core_buffer": 0.35
+  },
+  "optimization": {
+    "enabled": true,
+    "iterations": 8,
+    "max_cell_growth_fraction": 0.0
+  }
+}

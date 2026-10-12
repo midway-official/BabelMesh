@@ -1,0 +1,176 @@
+{
+  "boundary_faces": 1272,
+  "cell_types": {
+    "hexahedron": 340,
+    "polyhedron": 0,
+    "prism": 240,
+    "pyramid": 0,
+    "tetrahedron": 0
+  },
+  "cells": 580,
+  "extrusion_axis": 2,
+  "extrusion_thickness_m": 0.1,
+  "faces": 2256,
+  "generation_dimension": 2,
+  "generator": "cartesian-hybrid",
+  "metadata": {
+    "bounds_audit": {
+      "available": true,
+      "checked_points": 1032,
+      "maximum_excess_m": 0.0,
+      "maximum_m": [
+        2.0,
+        2.0,
+        0.05
+      ],
+      "method": "all vertices within fixed closed coordinate bounds; convex cells retain the same envelope",
+      "minimum_m": [
+        -2.0,
+        -2.0,
+        -0.05
+      ],
+      "passed": true
+    },
+    "conversion_source": {
+      "file": "/home/midway/BabelMesh/acceptance/evidence/hybrid-20261012/final-v2/cylinder2d-unoptimized/mesh.bsm",
+      "format": "babelsim-v3"
+    },
+    "domain_bounds_constraint": {
+      "maximum_m": [
+        2.0,
+        2.0,
+        0.05
+      ],
+      "minimum_m": [
+        -2.0,
+        -2.0,
+        -0.05
+      ],
+      "source": "initial imported mesh envelope"
+    },
+    "generation_region_tags_available": false,
+    "inferred_generation_rule": "exact paired slab with complete front/back symmetry caps",
+    "optimization": {
+      "accepted_sweeps": 0,
+      "added_cells": 0,
+      "after": {
+        "face_quality_thresholds_passed": true,
+        "full_cfd_profile_evaluated": false,
+        "max_internal_skewness": 0.24546154445058427,
+        "max_non_orthogonality_degrees": 57.48449357752609,
+        "mean_quartic_face_penalty": 0.060134802807454264,
+        "min_cell_volume_m3": 0.00023524113679094204,
+        "negative_or_zero_volume_cells": 0,
+        "open_cells": 0,
+        "p99_internal_skewness": 0.23271879361572195,
+        "p99_non_orthogonality_degrees": 57.48449357752576,
+        "skewness_definition": "distance from face centroid to centre-line intersection / sqrt(face area)",
+        "unassigned_boundary_faces": 0,
+        "worst_internal_skewness_face": 1997,
+        "worst_non_orthogonality_face": 1445
+      },
+      "allowed_cell_growth_fraction": 0.0,
+      "before": {
+        "face_quality_thresholds_passed": true,
+        "full_cfd_profile_evaluated": false,
+        "max_internal_skewness": 0.24546154445058427,
+        "max_non_orthogonality_degrees": 57.48449357752609,
+        "mean_quartic_face_penalty": 0.060134802807454264,
+        "min_cell_volume_m3": 0.00023524113679094204,
+        "negative_or_zero_volume_cells": 0,
+        "open_cells": 0,
+        "p99_internal_skewness": 0.23271879361572195,
+        "p99_non_orthogonality_degrees": 57.48449357752576,
+        "skewness_definition": "distance from face centroid to centre-line intersection / sqrt(face area)",
+        "unassigned_boundary_faces": 0,
+        "worst_internal_skewness_face": 1997,
+        "worst_non_orthogonality_face": 1445
+      },
+      "cells_after": 580,
+      "cells_before": 580,
+      "circumcentre_sweeps": 0,
+      "constraints": [
+        "fixed tagged or geometrically detected Cartesian vertices",
+        "fixed physical-boundary and tagged boundary-layer vertices",
+        "paired planar extrusion vertices",
+        "positive convex shells",
+        "fixed closed background/domain bounds",
+        "max and p99 face-quality metrics do not worsen",
+        "no added cells"
+      ],
+      "eligible_node_groups": 0,
+      "enabled": true,
+      "face_alignment_sweeps": 0,
+      "fixed_node_groups": 516,
+      "generation_region_tags_available": false,
+      "geometrically_protected_cartesian_cells": 340,
+      "guarded_sensitive_node_groups": 0,
+      "line_search_trials": 0,
+      "local_face_alignment_moves": 0,
+      "local_face_alignment_trials": 0,
+      "max_displacement_m": 0.0,
+      "merged_transition_tet_pairs": 0,
+      "method": "constrained transition-node relocation with quality rollback",
+      "missing_region_tags_policy": "preserve all vertices and cells",
+      "moved_vertices": 0,
+      "objective_after": 2.0567546132878087,
+      "objective_before": 2.0567546132878087,
+      "post_swap_relocation": {
+        "enabled": false
+      },
+      "topology_swaps": {
+        "enabled": false
+      }
+    }
+  },
+  "patch_faces": {
+    "back": 580,
+    "body_wall": 32,
+    "front": 580,
+    "xmax": 20,
+    "xmin": 20,
+    "ymax": 20,
+    "ymin": 20
+  },
+  "quality": {
+    "face_quality_thresholds_passed": true,
+    "full_cfd_profile_evaluated": false,
+    "max_internal_skewness": 0.24546154445058427,
+    "max_non_orthogonality_degrees": 57.48449357752609,
+    "mean_quartic_face_penalty": 0.060134802807454264,
+    "min_cell_volume_m3": 0.00023524113679094204,
+    "negative_or_zero_volume_cells": 0,
+    "open_cells": 0,
+    "p99_internal_skewness": 0.23271879361572195,
+    "p99_non_orthogonality_degrees": 57.48449357752576,
+    "skewness_definition": "distance from face centroid to centre-line intersection / sqrt(face area)",
+    "unassigned_boundary_faces": 0,
+    "worst_internal_skewness_face": 1997,
+    "worst_non_orthogonality_face": 1445
+  },
+  "region_face_quality": {
+    "interface_policy": "cross-region faces counted in both regions",
+    "regions": {
+      "transition": {
+        "faces": 2256,
+        "max_internal_skewness": 0.24546154445058427,
+        "max_non_orthogonality_degrees": 57.48449357752609,
+        "p99_internal_skewness": 0.23271879361572195,
+        "p99_non_orthogonality_degrees": 57.48449357752576
+      }
+    }
+  },
+  "regions": {
+    "boundary_layer": 0,
+    "cartesian": 0,
+    "transition": 580
+  },
+  "tetrahedron_shape_quality": {
+    "definition": "12*(3*V)^(2/3)/sum(squared edge lengths); regular=1",
+    "regions": {},
+    "used_as_fvm_acceptance_gate": false
+  },
+  "topological_dimension": 3,
+  "vertices": 1032,
+  "volume_m3": 1.4876279745187062
+}

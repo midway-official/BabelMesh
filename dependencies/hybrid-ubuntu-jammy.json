@@ -1,0 +1,21 @@
+{
+  "recorded_on": "2026-10-12",
+  "platform": "Ubuntu 22.04 x86_64 / WSL",
+  "cxx_standard": 17,
+  "system_packages": {
+    "libocct-foundation-dev": "7.5.1+dfsg1-2ubuntu1",
+    "libeigen3-dev": "3.4.0-2ubuntu2",
+    "nlohmann-json3-dev": "3.10.5-2",
+    "libgmsh4.8": "4.8.4+ds2-2build1",
+    "qt6-base-dev": "6.2.4+dfsg-2ubuntu1.1",
+    "libqt6opengl6-dev": "6.2.4+dfsg-2ubuntu1.1",
+    "libqt6svg6": "6.2.4-1ubuntu1"
+  },
+  "development_cache": {
+    "gmsh": {"version": "4.8.4", "include": ".cache/dev-packages/gmsh/usr/include/gmsh.h"},
+    "cgns": {"version": "3.4.0-3", "include": ".cache/dev-packages/cgns/usr/include/cgnslib.h", "library": ".cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so"},
+    "cgnscheck": {"version": "3.4.0-3", "binary": ".cache/dev-packages/cgns-tools/usr/bin/cgnscheck", "test_only": true}
+  },
+  "commercial_application_versions_tested": [],
+  "note": "Tested build snapshot; not a claim to use the newest upstream release. Version selection for exchange adapters follows the file format rather than a proprietary application release."
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "platform": "Ubuntu 22.04 Jammy amd64",
+  "packages": {
+    "make": {"version": "4.3-4.1build1", "license": "GPL-3.0-or-later", "role": "build tool"},
+    "g++": {"version": "4:11.2.0-1ubuntu1", "license": "GPL-3.0-or-later", "role": "C++ compiler"},
+    "python3-jsonschema": {"version": "3.2.0-0ubuntu2", "license": "MIT upstream; Debian packaging GPL-2+", "role": "contract test only"},
+    "nlohmann-json3-dev": {"version": "3.10.5-2", "license": "MIT", "role": "C++ JSON parser"},
+    "libeigen3-dev": {"version": "3.4.0-2ubuntu2", "license": "MPL-2.0 for Eigen/Core modules used", "role": "linear algebra"},
+    "libocct-foundation-dev": {"version": "7.5.1+dfsg1-2ubuntu1", "license": "LGPL-2.1-only WITH OCCT-exception-1.0", "role": "CAD kernel"},
+    "libocct-modeling-data-dev": {"version": "7.5.1+dfsg1-2ubuntu1", "license": "LGPL-2.1-only WITH OCCT-exception-1.0", "role": "CAD topology and geometry"},
+    "libocct-modeling-algorithms-dev": {"version": "7.5.1+dfsg1-2ubuntu1", "license": "LGPL-2.1-only WITH OCCT-exception-1.0", "role": "CAD operations and booleans"},
+    "libocct-ocaf-dev": {"version": "7.5.1+dfsg1-2ubuntu1", "license": "LGPL-2.1-only WITH OCCT-exception-1.0", "role": "CAD document and assembly model"},
+    "libocct-visualization-dev": {"version": "7.5.1+dfsg1-2ubuntu1", "license": "LGPL-2.1-only WITH OCCT-exception-1.0", "role": "CAD triangulation and visualization modules"},
+    "libocct-data-exchange-dev": {"version": "7.5.1+dfsg1-2ubuntu1", "license": "LGPL-2.1-only WITH OCCT-exception-1.0", "role": "STEP and CAD data exchange"}
+  }
+}

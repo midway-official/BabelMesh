@@ -1,0 +1,124 @@
+{
+  "background": {
+    "bounds": {
+      "maximum": [
+        2,
+        2,
+        2
+      ],
+      "minimum": [
+        0,
+        0,
+        0
+      ]
+    },
+    "cell_counts": [
+      8,
+      8,
+      8
+    ],
+    "uniform_cells": true
+  },
+  "boundary_layers": {
+    "enabled": false,
+    "strict_coverage": true,
+    "targets": []
+  },
+  "cad": {
+    "groups": [],
+    "imports": [],
+    "operations": [
+      {
+        "id": "unrotated",
+        "inputs": [],
+        "operation": "box",
+        "parameters": {
+          "maximum": [
+            1.5,
+            1.5,
+            1.5
+          ],
+          "minimum": [
+            0.5,
+            0.5,
+            0.5
+          ]
+        }
+      },
+      {
+        "id": "rotated",
+        "inputs": [
+          "unrotated"
+        ],
+        "operation": "transform",
+        "parameters": {
+          "rotation": [
+            0.0,
+            0.0,
+            0.5235987755982989
+          ],
+          "translation": [
+            0.6339745962155614,
+            -0.3660254037844386,
+            0.0
+          ]
+        }
+      }
+    ]
+  },
+  "fluid_domain": {
+    "mode": "external",
+    "outer_bounds": {
+      "maximum": [
+        2,
+        2,
+        2
+      ],
+      "minimum": [
+        0,
+        0,
+        0
+      ]
+    },
+    "seeds": [
+      [
+        0.1,
+        0.1,
+        0.1
+      ]
+    ],
+    "solids": [
+      "rotated"
+    ]
+  },
+  "output": {
+    "directory": "outputs/m4-rotated",
+    "formats": [
+      "babelsim-v3",
+      "vtu"
+    ],
+    "overwrite": true
+  },
+  "quality": {
+    "mode": "strict",
+    "profile": "strict-cfd-v1"
+  },
+  "resources": {
+    "max_cells": 500000,
+    "max_memory_mb": 2048,
+    "threads": 1
+  },
+  "schema_version": 1,
+  "sizing": {
+    "balance_face_neighbors": 1,
+    "max_level": 4,
+    "maximum_size": 0.25,
+    "minimum_size": 0.015625,
+    "sources": [],
+    "surface_size": 0.015625
+  },
+  "units": {
+    "length": "m",
+    "output_length": "m"
+  }
+}

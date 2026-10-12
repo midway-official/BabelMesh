@@ -1,0 +1,4 @@
+# CAD exchange fixtures preserve the original producer's exact bytes/hash.
+tests/fixtures/*.step -whitespace
+# Keep compiler and runtime evidence verbatim, including producer whitespace.
+acceptance/evidence/**/*.log -whitespace

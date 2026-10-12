@@ -1,0 +1,131 @@
+{
+  "all": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 10800,
+      "max": 74.6311928092662,
+      "p99": 71.20937350270434
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 9918,
+      "max": 0.4698472186011655,
+      "p99": 0.286695062883863
+    },
+    "worst_angle_face": 3037,
+    "worst_skew_face": 3090
+  },
+  "boundary": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 882,
+      "max": 74.6311928092662,
+      "p99": 73.86951069812004
+    },
+    "skew": null,
+    "worst_angle_face": 3037,
+    "worst_skew_face": -1
+  },
+  "cells": 4711,
+  "combined_owner_neighbour_interfaces_diagnostic_only": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 9918,
+      "max": 73.30188031820198,
+      "p99": 68.67878812389439
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 9918,
+      "max": 0.4698472186011655,
+      "p99": 0.286695062883863
+    },
+    "worst_angle_face": 3116,
+    "worst_skew_face": 3090
+  },
+  "geometry": "actual BabelSim face area centroids and signed-volume cell centroids",
+  "internal": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 9918,
+      "max": 73.30188031820198,
+      "p99": 68.67878812389439
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 9918,
+      "max": 0.4698472186011655,
+      "p99": 0.286695062883863
+    },
+    "worst_angle_face": 3116,
+    "worst_skew_face": 3090
+  },
+  "mesh": "/home/midway/BabelMesh/acceptance/evidence/hybrid-20261012/final-v2/sphere3d-layers/mesh.bsm",
+  "other_faces": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 2919,
+      "max": 8.277837547860194,
+      "p99": 5.6551797768497005
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 2319,
+      "max": 0.07274460275674928,
+      "p99": 0.0503866407058469
+    },
+    "worst_angle_face": 2085,
+    "worst_skew_face": 2085
+  },
+  "skew_definition": "distance(face centroid, cell-centre line intersection with face plane) / sqrt(norm(Sf))",
+  "triangular_faces": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 7881,
+      "max": 74.6311928092662,
+      "p99": 71.44172385859659
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 7599,
+      "max": 0.4698472186011655,
+      "p99": 0.29639580948624006
+    },
+    "worst_angle_face": 3037,
+    "worst_skew_face": 3090
+  },
+  "worst_examples": [
+    {
+      "center": [
+        1.4791551298589123,
+        1.4215683952636633,
+        1.9818497538457527
+      ],
+      "face": 3037,
+      "neighbour": -1,
+      "owner": 880,
+      "owner_center": [
+        1.447478088441189,
+        1.4141604561405052,
+        1.9872897914107184
+      ],
+      "vertex_count": 3
+    },
+    {
+      "center": [
+        1.3813547097830776,
+        1.348316318619668,
+        1.9813546629437764
+      ],
+      "face": 3090,
+      "neighbour": 902,
+      "owner": 897,
+      "owner_center": [
+        1.3610098432059403,
+        1.3099205433272376,
+        1.959032414523251
+      ],
+      "vertex_count": 3
+    }
+  ]
+}

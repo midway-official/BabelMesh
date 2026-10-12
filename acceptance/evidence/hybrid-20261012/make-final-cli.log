@@ -1,0 +1,20 @@
+g++ -Iinclude -I/usr/include/opencascade -I/usr/include/eigen3 -I.cache/dev-packages/gmsh/usr/include -I.cache/dev-packages/cgns/usr/include/ -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O3 -DNDEBUG -MMD -MP -c src/cli/conversion.cpp -o build/release/obj/cli/conversion.o
+g++  build/release/obj/cli/conversion.o build/release/obj/cli/hybrid.o build/release/obj/cli/inspect_cad.o build/release/obj/cli/main.o build/release/lib/libbabelmesh.a -L/usr/lib/x86_64-linux-gnu -lTKXDESTEP -lTKSTEP -lTKSTEP209 -lTKSTEPAttr -lTKSTEPBase -lTKXSBase -lTKXCAF -lTKCAF -lTKLCAF -lTKCDF -lTKV3d -lTKService -lTKOffset -lTKBO -lTKBool -lTKShHealing -lTKTopAlgo -lTKGeomAlgo -lTKGeomBase -lTKMesh -lTKPrim -lTKBRep -lTKG3d -lTKG2d -lTKMath -lTKernel -pthread /usr/lib/x86_64-linux-gnu/libgmsh.so.4.8 .cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu/libcgns.so -Wl,-rpath,/home/midway/BabelMesh/.cache/dev-packages/cgns/usr/lib/x86_64-linux-gnu -o build/release/bin/babelmesh
+test_acceptance_gate_statuses_have_evidence (__main__.M0ContractTest) ... ok
+test_curvature_radius_is_separate_from_cell_size (__main__.M0ContractTest) ... ok
+test_example_matches_strict_schema (__main__.M0ContractTest) ... ok
+test_explicit_surface_tolerance_contract (__main__.M0ContractTest) ... ok
+test_generate_applies_local_region_refinement (__main__.M0ContractTest) ... ok
+test_generate_cad_staircase_extraction_is_reported (__main__.M0ContractTest) ... ok
+test_generate_writes_uniform_hex_outputs (__main__.M0ContractTest) ... ok
+test_inspect_cad_writes_geometry_report (__main__.M0ContractTest) ... ok
+test_later_commands_fail_explicitly (__main__.M0ContractTest) ... ok
+test_surface_size_is_a_scalar_boundary_cell_cap (__main__.M0ContractTest) ... ok
+test_unknown_command_and_option_fail (__main__.M0ContractTest) ... ok
+test_unknown_keys_and_invalid_units_are_rejected (__main__.M0ContractTest) ... ok
+test_version_and_help (__main__.M0ContractTest) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 2.478s
+
+OK

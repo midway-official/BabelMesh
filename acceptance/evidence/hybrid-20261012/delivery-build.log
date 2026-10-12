@@ -1,0 +1,99 @@
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found nlohmann_json: /usr/lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake (found version "3.10.5") 
+-- Looking for C++ include pthread.h
+-- Looking for C++ include pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- Found WrapAtomic: TRUE  
+-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so   
+-- Found WrapOpenGL: TRUE  
+-- Found XKB: /usr/lib/x86_64-linux-gnu/libxkbcommon.so (found suitable version "1.4.0", minimum required is "0.5.0") 
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/babelmesh-delivery-20261012/build/qt
+[  2%] Building CXX object CMakeFiles/babelsim-mesh-check.dir/home/midway/BabelSim/src/core/mesh.cpp.o
+[  5%] Building CXX object CMakeFiles/babelsim-mesh-check.dir/tools/m4_solver_quality_probe.cpp.o
+[  7%] Building CXX object CMakeFiles/babelmesh-core.dir/src/cad/preview.cpp.o
+[ 10%] Building CXX object CMakeFiles/babelsim-mesh-check.dir/home/midway/BabelSim/src/io/mesh_reader.cpp.o
+[ 13%] Building CXX object CMakeFiles/babelmesh-core.dir/src/cad/project.cpp.o
+[ 15%] Building CXX object CMakeFiles/babelmesh-core.dir/src/core/background_grid.cpp.o
+In file included from /usr/include/opencascade/TDataStd_GenericExtString.hxx:17,
+                 from /usr/include/opencascade/TDataStd_Name.hxx:20,
+                 from /tmp/babelmesh-delivery-20261012/src/cad/project.cpp:42:
+/usr/include/opencascade/TDF_DerivedAttribute.hxx:26:39: warning: extra ‘;’ [-Wpedantic]
+   26 |   DEFINE_STANDARD_RTTIEXT(Class, Base); \
+      |                                       ^
+/usr/include/opencascade/TDataStd_Name.hxx:87:3: note: in expansion of macro ‘DEFINE_DERIVED_ATTRIBUTE’
+   87 |   DEFINE_DERIVED_ATTRIBUTE(TDataStd_Name, TDataStd_GenericExtString)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/opencascade/TDF_DerivedAttribute.hxx:26:39: warning: extra ‘;’ [-Wpedantic]
+   26 |   DEFINE_STANDARD_RTTIEXT(Class, Base); \
+      |                                       ^
+/usr/include/opencascade/XCAFDoc_DocumentTool.hxx:136:3: note: in expansion of macro ‘DEFINE_DERIVED_ATTRIBUTE’
+  136 |   DEFINE_DERIVED_ATTRIBUTE(XCAFDoc_DocumentTool,TDataStd_GenericEmpty)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/opencascade/TDF_DerivedAttribute.hxx:26:39: warning: extra ‘;’ [-Wpedantic]
+   26 |   DEFINE_STANDARD_RTTIEXT(Class, Base); \
+      |                                       ^
+/usr/include/opencascade/XCAFDoc_ShapeTool.hxx:427:3: note: in expansion of macro ‘DEFINE_DERIVED_ATTRIBUTE’
+  427 |   DEFINE_DERIVED_ATTRIBUTE(XCAFDoc_ShapeTool,TDataStd_GenericEmpty)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+[ 18%] Building CXX object CMakeFiles/babelmesh-core.dir/src/core/cartesian_mesh.cpp.o
+[ 21%] Linking CXX executable bin/babelsim-mesh-check
+[ 21%] Built target babelsim-mesh-check
+[ 23%] Building CXX object CMakeFiles/babelmesh-core.dir/src/core/cgns_io.cpp.o
+[ 26%] Building CXX object CMakeFiles/babelmesh-core.dir/src/core/face_consolidation.cpp.o
+[ 28%] Building CXX object CMakeFiles/babelmesh-core.dir/src/core/fluent_io.cpp.o
+[ 31%] Building CXX object CMakeFiles/babelmesh-core.dir/src/core/fluid_domain.cpp.o
+[ 34%] Building CXX object CMakeFiles/babelmesh-core.dir/src/core/hybrid_mesher.cpp.o
+[ 36%] Building CXX object CMakeFiles/babelmesh-core.dir/src/core/mesh_conversion.cpp.o
+[ 39%] Building CXX object CMakeFiles/babelmesh-core.dir/src/core/mesh_optimizer.cpp.o
+[ 42%] Building CXX object CMakeFiles/babelmesh-core.dir/src/core/mesh_topology_optimizer.cpp.o
+[ 44%] Building CXX object CMakeFiles/babelmesh-core.dir/src/core/mixed_mesh.cpp.o
+[ 47%] Building CXX object CMakeFiles/babelmesh-core.dir/src/core/polyhedral_audit.cpp.o
+[ 50%] Building CXX object CMakeFiles/babelmesh-core.dir/src/core/polyhedral_reconstruction.cpp.o
+[ 52%] Building CXX object CMakeFiles/babelmesh-core.dir/src/core/surface_distance.cpp.o
+[ 55%] Building CXX object CMakeFiles/babelmesh-core.dir/src/core/surface_index.cpp.o
+[ 57%] Building CXX object CMakeFiles/babelmesh-core.dir/src/core/version.cpp.o
+[ 60%] Linking CXX static library libbabelmesh-core.a
+[ 60%] Built target babelmesh-core
+[ 63%] Building CXX object CMakeFiles/babelmesh.dir/src/cli/conversion.cpp.o
+[ 65%] Building CXX object CMakeFiles/babelmesh.dir/src/cli/hybrid.cpp.o
+[ 71%] Building CXX object CMakeFiles/mixed_mesh_test.dir/home/midway/BabelSim/src/core/mesh.cpp.o
+[ 71%] Building CXX object CMakeFiles/mixed_mesh_test.dir/tests/mixed_mesh_test.cpp.o
+[ 73%] Building CXX object CMakeFiles/mixed_mesh_test.dir/home/midway/BabelSim/src/io/mesh_reader.cpp.o
+[ 76%] Building CXX object CMakeFiles/babelmesh.dir/src/cli/inspect_cad.cpp.o
+[ 78%] Building CXX object CMakeFiles/babelmesh.dir/src/cli/main.cpp.o
+[ 81%] Linking CXX executable bin/mixed_mesh_test
+[ 81%] Built target mixed_mesh_test
+[ 84%] Linking CXX executable bin/babelmesh
+[ 84%] Built target babelmesh
+[ 86%] Automatic RCC for src/gui/icons.qrc
+[ 94%] Building CXX object CMakeFiles/babelmesh-gui.dir/src/gui/main.cpp.o
+[ 94%] Building CXX object CMakeFiles/babelmesh-gui.dir/src/gui/mesh_view.cpp.o
+[ 94%] Building CXX object CMakeFiles/babelmesh-gui.dir/src/gui/studio.cpp.o
+[ 97%] Building CXX object CMakeFiles/babelmesh-gui.dir/babelmesh-gui_autogen/MXUWEOXILK/qrc_icons.cpp.o
+[100%] Linking CXX executable bin/babelmesh-gui
+[100%] Built target babelmesh-gui
+Consolidate compiler generated dependencies of target babelsim-mesh-check
+[ 10%] Built target babelsim-mesh-check
+Consolidate compiler generated dependencies of target babelmesh-core
+[ 60%] Built target babelmesh-core
+Consolidate compiler generated dependencies of target mixed_mesh_test
+Consolidate compiler generated dependencies of target babelmesh
+[ 71%] Built target mixed_mesh_test
+[ 73%] Building CXX object CMakeFiles/babelmesh.dir/src/cli/conversion.cpp.o
+[ 76%] Linking CXX executable bin/babelmesh
+[ 84%] Built target babelmesh
+Consolidate compiler generated dependencies of target babelmesh-gui
+[100%] Built target babelmesh-gui

@@ -1,0 +1,75 @@
+{
+  "all": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 4,
+      "max": 25.23940182067893,
+      "p99": 25.23940182067893
+    },
+    "skew": null,
+    "worst_angle_face": 0,
+    "worst_skew_face": -1
+  },
+  "boundary": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 4,
+      "max": 25.23940182067893,
+      "p99": 25.23940182067893
+    },
+    "skew": null,
+    "worst_angle_face": 0,
+    "worst_skew_face": -1
+  },
+  "cells": 1,
+  "combined_owner_neighbour_interfaces_diagnostic_only": {
+    "nonorth": null,
+    "skew": null,
+    "worst_angle_face": -1,
+    "worst_skew_face": -1
+  },
+  "geometry": "actual BabelSim face area centroids and signed-volume cell centroids",
+  "internal": {
+    "nonorth": null,
+    "skew": null,
+    "worst_angle_face": -1,
+    "worst_skew_face": -1
+  },
+  "mesh": "/home/midway/BabelMesh/acceptance/evidence/hybrid-20261012/final-v2/exchange/external-tet.bsm",
+  "other_faces": {
+    "nonorth": null,
+    "skew": null,
+    "worst_angle_face": -1,
+    "worst_skew_face": -1
+  },
+  "skew_definition": "distance(face centroid, cell-centre line intersection with face plane) / sqrt(norm(Sf))",
+  "triangular_faces": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 4,
+      "max": 25.23940182067893,
+      "p99": 25.23940182067893
+    },
+    "skew": null,
+    "worst_angle_face": 0,
+    "worst_skew_face": -1
+  },
+  "worst_examples": [
+    {
+      "center": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.0
+      ],
+      "face": 0,
+      "neighbour": -1,
+      "owner": 0,
+      "owner_center": [
+        0.25,
+        0.24999999999999994,
+        0.24999999999999994
+      ],
+      "vertex_count": 3
+    }
+  ]
+}

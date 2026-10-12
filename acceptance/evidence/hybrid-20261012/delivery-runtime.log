@@ -1,0 +1,155 @@
+[1/7] Complete Cartesian background and local refinement
+[2/7] CAD boundary and wall layer reservation geometry
+Info    : Meshing 1D...
+Info    : [  0%] Meshing curve 1 (Line)
+Info    : [ 10%] Meshing curve 2 (Line)
+Info    : [ 20%] Meshing curve 3 (Line)
+Info    : [ 30%] Meshing curve 4 (Line)
+Info    : [ 40%] Meshing curve 5 (Line)
+Info    : [ 50%] Meshing curve 6 (Line)
+Info    : [ 50%] Meshing curve 7 (Line)
+Info    : [ 60%] Meshing curve 8 (Line)
+Info    : [ 70%] Meshing curve 9 (Line)
+Info    : [ 80%] Meshing curve 10 (Line)
+Info    : [ 90%] Meshing curve 11 (Line)
+Info    : [100%] Meshing curve 12 (Line)
+Info    : Done meshing 1D (Wall 0.000824264s, CPU 0s)
+Info    : Meshing 2D...
+Info    : [  0%] Meshing surface 1 (Plane, Frontal-Delaunay)
+Info    : [ 20%] Meshing surface 2 (Plane, Frontal-Delaunay)
+Info    : [ 40%] Meshing surface 3 (Plane, Frontal-Delaunay)
+Info    : [ 50%] Meshing surface 4 (Plane, Frontal-Delaunay)
+Info    : [ 70%] Meshing surface 5 (Plane, Frontal-Delaunay)
+Info    : [ 90%] Meshing surface 6 (Plane, Frontal-Delaunay)
+Info    : Done meshing 2D (Wall 0.0116338s, CPU 0.009436s)
+Info    : 269 nodes 614 elements
+[3/7] Carve solids and reserved wall/fit regions from background
+Retained Cartesian outer boundary; fill only carved internal cavities
+[4/7] Commit wall layers and fill the carved cavity
+[5/7] Shared faces, cell shells and volume checks
+[6/7] Constrained automatic quality optimization
+Optimizer: 0 accepted sweeps, 0 vertices moved, 0 cells added, objective 3.59898e-56 -> 3.59898e-56
+[7/7] Bidirectional CAD fit audit
+Generated 216 hybrid cells in "/tmp/babelmesh-delivery-20261012/build/delivery-box"
+{
+  "all": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 756,
+      "max": 0.0,
+      "p99": 0.0
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 540,
+      "max": 2.4075462115248852e-15,
+      "p99": 2.1065000811460206e-15
+    },
+    "worst_angle_face": 0,
+    "worst_skew_face": 660
+  },
+  "boundary": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 216,
+      "max": 0.0,
+      "p99": 0.0
+    },
+    "skew": null,
+    "worst_angle_face": 0,
+    "worst_skew_face": -1
+  },
+  "cells": 216,
+  "combined_owner_neighbour_interfaces_diagnostic_only": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 540,
+      "max": 0.0,
+      "p99": 0.0
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 540,
+      "max": 2.4075462115248852e-15,
+      "p99": 2.1065000811460206e-15
+    },
+    "worst_angle_face": 3,
+    "worst_skew_face": 660
+  },
+  "geometry": "actual BabelSim face area centroids and signed-volume cell centroids",
+  "internal": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 540,
+      "max": 0.0,
+      "p99": 0.0
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 540,
+      "max": 2.4075462115248852e-15,
+      "p99": 2.1065000811460206e-15
+    },
+    "worst_angle_face": 1,
+    "worst_skew_face": 660
+  },
+  "mesh": "/tmp/babelmesh-delivery-20261012/build/delivery-box/mesh.bsm",
+  "other_faces": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 756,
+      "max": 0.0,
+      "p99": 0.0
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 540,
+      "max": 2.4075462115248852e-15,
+      "p99": 2.1065000811460206e-15
+    },
+    "worst_angle_face": 0,
+    "worst_skew_face": 660
+  },
+  "skew_definition": "distance(face centroid, cell-centre line intersection with face plane) / sqrt(norm(Sf))",
+  "triangular_faces": {
+    "nonorth": null,
+    "skew": null,
+    "worst_angle_face": -1,
+    "worst_skew_face": -1
+  },
+  "worst_examples": [
+    {
+      "center": [
+        0.08333333333333333,
+        0.08333333333333333,
+        0.0
+      ],
+      "face": 0,
+      "neighbour": -1,
+      "owner": 0,
+      "owner_center": [
+        0.08333333333333331,
+        0.08333333333333331,
+        0.08333333333333331
+      ],
+      "vertex_count": 4
+    },
+    {
+      "center": [
+        0.9166666666666667,
+        0.16666666666666666,
+        0.9166666666666667
+      ],
+      "face": 660,
+      "neighbour": 191,
+      "owner": 185,
+      "owner_center": [
+        0.9166666666666666,
+        0.08333333333333331,
+        0.9166666666666664
+      ],
+      "vertex_count": 4
+    }
+  ]
+}
+Converted 216 cells, 0 added: "/tmp/babelmesh-delivery-20261012/build/delivery-box.cgns"

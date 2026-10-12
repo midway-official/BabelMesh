@@ -1,0 +1,18 @@
+test_acceptance_gate_statuses_have_evidence (__main__.M0ContractTest) ... ok
+test_curvature_radius_is_separate_from_cell_size (__main__.M0ContractTest) ... ok
+test_example_matches_strict_schema (__main__.M0ContractTest) ... ok
+test_explicit_surface_tolerance_contract (__main__.M0ContractTest) ... ok
+test_generate_applies_local_region_refinement (__main__.M0ContractTest) ... ok
+test_generate_cad_staircase_extraction_is_reported (__main__.M0ContractTest) ... ok
+test_generate_writes_uniform_hex_outputs (__main__.M0ContractTest) ... ok
+test_inspect_cad_writes_geometry_report (__main__.M0ContractTest) ... ok
+test_later_commands_fail_explicitly (__main__.M0ContractTest) ... ok
+test_surface_size_is_a_scalar_boundary_cell_cap (__main__.M0ContractTest) ... ok
+test_unknown_command_and_option_fail (__main__.M0ContractTest) ... ok
+test_unknown_keys_and_invalid_units_are_rejected (__main__.M0ContractTest) ... ok
+test_version_and_help (__main__.M0ContractTest) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 3.029s
+
+OK

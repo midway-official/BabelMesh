@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/studio">
+    <file alias="caret-up.svg">assets/caret-up.svg</file>
+    <file alias="caret-down.svg">assets/caret-down.svg</file>
+  </qresource>
+</RCC>

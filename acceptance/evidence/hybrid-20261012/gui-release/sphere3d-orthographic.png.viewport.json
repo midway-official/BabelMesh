@@ -1,0 +1,48 @@
+{
+  "cap_cell_type_counts": {
+    "10": 151,
+    "12": 80
+  },
+  "cap_vertices": 784,
+  "capture_checks": {
+    "colours_passed": true,
+    "dark_edge_pixels": 14381,
+    "edges_passed": true,
+    "non_opaque_composite_pixels": 0,
+    "passed": true,
+    "planar_caps_passed": true,
+    "saturated_primary_pixels": 0,
+    "tinted_surface_pixels": 144327
+  },
+  "cell_inset_fraction": 0.03500000014901161,
+  "cell_type_counts": {
+    "10": 1333,
+    "12": 920,
+    "14": 128
+  },
+  "cells": 2381,
+  "clip_axis": 2,
+  "clip_coordinate_m": 1.5,
+  "clip_fraction": 0.5,
+  "clip_mode": "plane",
+  "depth_sorted_transparency": true,
+  "edge_colour": "#000000",
+  "edge_style": "solid",
+  "edges_enabled": true,
+  "effective_cell_inset_fraction": 0.0,
+  "generation_dimension": 3,
+  "hidden_edges_suppressed": true,
+  "material": "frosted",
+  "max_cap_plane_error_m": 0.0,
+  "model": "mesh",
+  "opacity": 0.6200000047683716,
+  "physical_wall_colour": "#d9ded6",
+  "projection": "orthographic",
+  "rendered_triangles": 1102,
+  "view_quaternion": [
+    0.8804771900177002,
+    0.27984514832496643,
+    -0.3647056221961975,
+    0.11591567099094391
+  ]
+}

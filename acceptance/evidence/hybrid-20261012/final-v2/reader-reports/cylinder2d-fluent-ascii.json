@@ -1,0 +1,126 @@
+{
+  "all": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 2256,
+      "max": 57.48449357752615,
+      "p99": 57.48449357752559
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 984,
+      "max": 0.20679051359563166,
+      "p99": 0.20150693870908193
+    },
+    "worst_angle_face": 1089,
+    "worst_skew_face": 896
+  },
+  "boundary": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 1272,
+      "max": 57.48449357752615,
+      "p99": 57.4844935775258
+    },
+    "skew": null,
+    "worst_angle_face": 1089,
+    "worst_skew_face": -1
+  },
+  "cells": 580,
+  "combined_owner_neighbour_interfaces_diagnostic_only": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 984,
+      "max": 55.13040607972804,
+      "p99": 55.130406079727805
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 984,
+      "max": 0.20679051359563166,
+      "p99": 0.20150693870908193
+    },
+    "worst_angle_face": 746,
+    "worst_skew_face": 896
+  },
+  "geometry": "actual BabelSim face area centroids and signed-volume cell centroids",
+  "internal": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 984,
+      "max": 55.13040607972804,
+      "p99": 55.130406079727805
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 984,
+      "max": 0.20679051359563166,
+      "p99": 0.20150693870908193
+    },
+    "worst_angle_face": 746,
+    "worst_skew_face": 896
+  },
+  "mesh": "/home/midway/BabelMesh/acceptance/evidence/hybrid-20261012/final-v2/exchange/cylinder2d-fluent-ascii-roundtrip.bsm",
+  "other_faces": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 1776,
+      "max": 57.48449357752615,
+      "p99": 57.48449357752571
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 984,
+      "max": 0.20679051359563166,
+      "p99": 0.20150693870908193
+    },
+    "worst_angle_face": 1089,
+    "worst_skew_face": 896
+  },
+  "skew_definition": "distance(face centroid, cell-centre line intersection with face plane) / sqrt(norm(Sf))",
+  "triangular_faces": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 480,
+      "max": 0.0,
+      "p99": 0.0
+    },
+    "skew": null,
+    "worst_angle_face": 1436,
+    "worst_skew_face": -1
+  },
+  "worst_examples": [
+    {
+      "center": [
+        0.17333212631436573,
+        -0.571399443874355,
+        0.0
+      ],
+      "face": 1089,
+      "neighbour": -1,
+      "owner": 390,
+      "owner_center": [
+        0.19721857166725934,
+        -0.5780868662917783,
+        0.0
+      ],
+      "vertex_count": 4
+    },
+    {
+      "center": [
+        -0.6062765242260573,
+        0.5430337628896902,
+        0.0
+      ],
+      "face": 896,
+      "neighbour": 569,
+      "owner": 492,
+      "owner_center": [
+        -0.6708510161507049,
+        0.5620225085931269,
+        0.0
+      ],
+      "vertex_count": 4
+    }
+  ]
+}

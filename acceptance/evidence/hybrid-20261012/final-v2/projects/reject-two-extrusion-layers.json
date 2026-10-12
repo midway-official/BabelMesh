@@ -1,0 +1,137 @@
+{
+  "schema_version": 2,
+  "units": {
+    "length": "m",
+    "output_length": "m"
+  },
+  "cad": {
+    "imports": [],
+    "operations": [
+      {
+        "id": "body",
+        "operation": "cylinder",
+        "inputs": [],
+        "parameters": {
+          "axis_origin": [
+            0,
+            0,
+            -0.5
+          ],
+          "direction": [
+            0,
+            0,
+            1
+          ],
+          "radius": 0.6,
+          "height": 1
+        }
+      }
+    ],
+    "groups": [
+      {
+        "name": "body_wall",
+        "kind": "wall",
+        "selector": {
+          "operation_id": "body",
+          "entity_type": "face"
+        }
+      }
+    ]
+  },
+  "fluid_domain": {
+    "mode": "external",
+    "outer_bounds": {
+      "minimum": [
+        -2,
+        -2,
+        -0.5
+      ],
+      "maximum": [
+        2,
+        2,
+        0.5
+      ]
+    },
+    "solids": [
+      "body"
+    ],
+    "seeds": [
+      [
+        -1.8,
+        -1.8,
+        0
+      ]
+    ]
+  },
+  "background": {
+    "bounds": {
+      "minimum": [
+        -2,
+        -2,
+        -0.5
+      ],
+      "maximum": [
+        2,
+        2,
+        0.5
+      ]
+    },
+    "cell_counts": [
+      20,
+      20,
+      2
+    ],
+    "uniform_cells": true
+  },
+  "sizing": {
+    "minimum_size": 0.04,
+    "maximum_size": 0.2,
+    "max_level": 4,
+    "balance_face_neighbors": 1,
+    "sources": [],
+    "surface_size": 0.12,
+    "volume_size": 0.2
+  },
+  "boundary_layers": {
+    "enabled": true,
+    "targets": [
+      {
+        "group": "body_wall",
+        "first_layer": 0.04,
+        "count": 2,
+        "growth_ratio": 1.2
+      }
+    ],
+    "strict_coverage": true
+  },
+  "quality": {
+    "profile": "strict-cfd-v1",
+    "mode": "strict",
+    "max_surface_deviation_m": 0.025
+  },
+  "resources": {
+    "max_cells": 1000000,
+    "max_memory_mb": 4096,
+    "threads": 1
+  },
+  "output": {
+    "directory": "../outputs/cylinder2d",
+    "formats": [
+      "babelsim-v3",
+      "vtu"
+    ],
+    "overwrite": false
+  },
+  "meshing": {
+    "dimension": 2,
+    "section_axis": "z",
+    "section_coordinate": 0,
+    "thickness": 0.1,
+    "core_buffer": 0.35
+  },
+  "optimization": {
+    "enabled": true,
+    "iterations": 8,
+    "max_cell_growth_fraction": 0.0
+  }
+}

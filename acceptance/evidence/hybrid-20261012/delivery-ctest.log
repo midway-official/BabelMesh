@@ -1,0 +1,8 @@
+Internal ctest changing into directory: /tmp/babelmesh-delivery-20261012/build/qt
+Test project /tmp/babelmesh-delivery-20261012/build/qt
+    Start 1: mixed-mesh-contract
+1/1 Test #1: mixed-mesh-contract ..............   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.01 sec

@@ -1,0 +1,136 @@
+{
+  "schema_version": 2,
+  "units": {
+    "length": "m",
+    "output_length": "m"
+  },
+  "cad": {
+    "imports": [],
+    "operations": [
+      {
+        "id": "channel",
+        "operation": "box",
+        "inputs": [],
+        "parameters": {
+          "minimum": [
+            0,
+            0,
+            0
+          ],
+          "maximum": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "id": "hole",
+        "operation": "cylinder",
+        "inputs": [],
+        "parameters": {
+          "axis_origin": [
+            0.5,
+            0.5,
+            0
+          ],
+          "direction": [
+            0,
+            0,
+            1
+          ],
+          "radius": 0.15,
+          "height": 1
+        }
+      },
+      {
+        "id": "fluid",
+        "operation": "cut",
+        "inputs": [
+          "channel",
+          "hole"
+        ],
+        "parameters": {}
+      }
+    ],
+    "groups": []
+  },
+  "fluid_domain": {
+    "mode": "internal",
+    "fluid_solids": [
+      "fluid"
+    ],
+    "caps": [],
+    "seeds": [
+      [
+        0.1,
+        0.1,
+        0.5
+      ]
+    ]
+  },
+  "background": {
+    "bounds": {
+      "minimum": [
+        0,
+        0,
+        0
+      ],
+      "maximum": [
+        1,
+        1,
+        1
+      ]
+    },
+    "cell_counts": [
+      8,
+      8,
+      1
+    ],
+    "uniform_cells": true
+  },
+  "sizing": {
+    "minimum_size": 0.04,
+    "maximum_size": 0.125,
+    "max_level": 4,
+    "balance_face_neighbors": 1,
+    "sources": [],
+    "surface_size": 0.125,
+    "volume_size": 0.125
+  },
+  "boundary_layers": {
+    "enabled": false,
+    "targets": [],
+    "strict_coverage": true
+  },
+  "quality": {
+    "profile": "strict-cfd-v1",
+    "mode": "diagnostic",
+    "max_surface_deviation_m": 0.025
+  },
+  "resources": {
+    "max_cells": 1000000,
+    "max_memory_mb": 4096,
+    "threads": 1
+  },
+  "output": {
+    "directory": "/home/midway/BabelMesh/acceptance/evidence/hybrid-20261012/final-v2/boolean-channel2d",
+    "formats": [
+      "babelsim-v3",
+      "vtu"
+    ],
+    "overwrite": false
+  },
+  "meshing": {
+    "dimension": 2,
+    "section_axis": "z",
+    "section_coordinate": 0.5,
+    "thickness": 0.1,
+    "core_buffer": 0.35
+  },
+  "optimization": {
+    "enabled": true,
+    "iterations": 8,
+    "max_cell_growth_fraction": 0.0
+  }
+}

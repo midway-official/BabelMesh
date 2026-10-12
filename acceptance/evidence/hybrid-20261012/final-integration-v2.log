@@ -1,0 +1,106 @@
+cylinder2d: passed
+cylinder2d-BabelSim-reader: passed
+overwrite-disabled: rejected as expected
+cylinder2d-spacing: passed
+cylinder2d-spacing-BabelSim-reader: passed
+cylinder2d-adaptive: passed
+cylinder2d-adaptive-BabelSim-reader: passed
+channel2d-x: passed
+channel2d-x-BabelSim-reader: passed
+channel2d-y: passed
+channel2d-y-BabelSim-reader: passed
+boolean-channel2d: passed
+boolean-channel2d-BabelSim-reader: passed
+sphere3d: passed
+sphere3d-BabelSim-reader: passed
+sphere3d-layers: passed
+sphere3d-layers-BabelSim-reader: passed
+sphere3d-adaptive: passed
+sphere3d-adaptive-BabelSim-reader: passed
+cylinder3d-sharp-caps: passed
+cylinder3d-sharp-caps-BabelSim-reader: passed
+cylinder3d-pierced-box: passed
+cylinder3d-pierced-box-BabelSim-reader: passed
+internal-box3d: passed
+internal-box3d-BabelSim-reader: passed
+STEP-export: passed
+step-sphere3d: passed
+step-sphere3d-BabelSim-reader: passed
+cylinder2d-fluent-ascii-write: passed
+cylinder2d-fluent-ascii-read: passed
+cylinder2d-fluent-ascii-solver-export: passed
+cylinder2d-fluent-ascii-BabelSim-reader: passed
+cylinder2d-cgns-write: passed
+cylinder2d-cgns-read: passed
+cylinder2d-cgns-solver-export: passed
+cylinder2d-cgns-BabelSim-reader: passed
+cylinder2d-cgns-CGNS-independent-check: passed
+cylinder2d-cgns-poly-write: passed
+cylinder2d-cgns-poly-read: passed
+cylinder2d-cgns-poly-solver-export: passed
+cylinder2d-cgns-poly-BabelSim-reader: passed
+cylinder2d-cgns-poly-CGNS-independent-check: passed
+cylinder2d-babelsim-v3-write: passed
+cylinder2d-babelsim-v3-read: passed
+cylinder2d-babelsim-v3-solver-export: passed
+cylinder2d-babelsim-v3-BabelSim-reader: passed
+cylinder2d-adaptive-fluent-ascii-write: passed
+cylinder2d-adaptive-fluent-ascii-read: passed
+cylinder2d-adaptive-fluent-ascii-solver-export: passed
+cylinder2d-adaptive-fluent-ascii-BabelSim-reader: passed
+cylinder2d-adaptive-cgns-write: passed
+cylinder2d-adaptive-cgns-read: passed
+cylinder2d-adaptive-cgns-solver-export: passed
+cylinder2d-adaptive-cgns-BabelSim-reader: passed
+cylinder2d-adaptive-cgns-CGNS-independent-check: passed
+sphere3d-fluent-ascii-write: passed
+sphere3d-fluent-ascii-read: passed
+sphere3d-fluent-ascii-solver-export: passed
+sphere3d-fluent-ascii-BabelSim-reader: passed
+sphere3d-cgns-write: passed
+sphere3d-cgns-read: passed
+sphere3d-cgns-solver-export: passed
+sphere3d-cgns-BabelSim-reader: passed
+sphere3d-cgns-CGNS-independent-check: passed
+sphere3d-cgns-poly-write: passed
+sphere3d-cgns-poly-read: passed
+sphere3d-cgns-poly-solver-export: passed
+sphere3d-cgns-poly-BabelSim-reader: passed
+sphere3d-cgns-poly-CGNS-independent-check: passed
+sphere3d-adaptive-cgns-write: passed
+sphere3d-adaptive-cgns-read: passed
+sphere3d-adaptive-cgns-solver-export: passed
+sphere3d-adaptive-cgns-BabelSim-reader: passed
+sphere3d-adaptive-cgns-CGNS-independent-check: passed
+explicit-unit-scaling-preserves-bounds: passed
+Fluent-homogeneous-external-tet: passed
+external-tet-BabelSim-reader: passed
+cylinder2d-unoptimized: passed
+cylinder2d-unoptimized-BabelSim-reader: passed
+standalone-optimization: passed
+optimized-BabelSim-reader: passed
+cylinder2d-unoptimized-native-optimization: passed
+cylinder2d-unoptimized-native-optimized-BabelSim-reader: passed
+cylinder2d-adaptive-native-optimization: passed
+cylinder2d-adaptive-native-optimized-BabelSim-reader: passed
+sphere3d-native-optimization: passed
+sphere3d-native-optimized-BabelSim-reader: passed
+native-planar-inference-x: passed
+native-planar-inference-y: passed
+native-tags-unknown-Fluent-write: passed
+native-tags-unknown-Fluent-read: passed
+reject-two-extrusion-layers: rejected as expected
+reject-extrusion-outside-background: rejected as expected
+reject-CAD-domain-outside-background: rejected as expected
+reject-checkpoint-outside-fixed-bounds: rejected as expected
+reject-optimization-outside-fixed-bounds: rejected as expected
+reject-cell-budget: rejected as expected
+reject-topology-option-type: rejected as expected
+reject-memory-budget: rejected as expected
+reject-layer-clearance: rejected as expected
+reject-strict-face-quality: rejected as expected
+reject-2D-tetrahedron-checkpoint: rejected as expected
+reject-Fluent-HDF5: rejected as expected
+reject-output-checkpoint-alias: rejected as expected
+reject-checkpoint-input-alias: rejected as expected
+105 real command checks passed; evidence: /home/midway/BabelMesh/acceptance/evidence/hybrid-20261012/final-v2

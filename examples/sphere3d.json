@@ -1,0 +1,121 @@
+{
+  "schema_version": 2,
+  "units": {
+    "length": "m",
+    "output_length": "m"
+  },
+  "cad": {
+    "imports": [],
+    "operations": [
+      {
+        "id": "body",
+        "operation": "sphere",
+        "inputs": [],
+        "parameters": {
+          "center": [
+            1.5,
+            1.5,
+            1.5
+          ],
+          "radius": 0.5
+        }
+      }
+    ],
+    "groups": [
+      {
+        "name": "body_wall",
+        "kind": "wall",
+        "selector": {
+          "operation_id": "body",
+          "entity_type": "face"
+        }
+      }
+    ]
+  },
+  "fluid_domain": {
+    "mode": "external",
+    "outer_bounds": {
+      "minimum": [
+        0,
+        0,
+        0
+      ],
+      "maximum": [
+        3,
+        3,
+        3
+      ]
+    },
+    "solids": [
+      "body"
+    ],
+    "seeds": [
+      [
+        0.2,
+        0.2,
+        0.2
+      ]
+    ]
+  },
+  "background": {
+    "bounds": {
+      "minimum": [
+        0,
+        0,
+        0
+      ],
+      "maximum": [
+        3,
+        3,
+        3
+      ]
+    },
+    "cell_counts": [
+      10,
+      10,
+      10
+    ],
+    "uniform_cells": true
+  },
+  "sizing": {
+    "minimum_size": 0.04,
+    "maximum_size": 0.3,
+    "max_level": 4,
+    "balance_face_neighbors": 1,
+    "sources": [],
+    "surface_size": 0.24,
+    "volume_size": 0.3
+  },
+  "boundary_layers": {
+    "enabled": false,
+    "targets": [],
+    "strict_coverage": true
+  },
+  "quality": {
+    "profile": "strict-cfd-v1",
+    "mode": "diagnostic",
+    "max_surface_deviation_m": 0.025
+  },
+  "resources": {
+    "max_cells": 1000000,
+    "max_memory_mb": 4096,
+    "threads": 1
+  },
+  "output": {
+    "directory": "../outputs/sphere3d",
+    "formats": [
+      "babelsim-v3",
+      "vtu"
+    ],
+    "overwrite": false
+  },
+  "meshing": {
+    "dimension": 3,
+    "core_buffer": 0.35
+  },
+  "optimization": {
+    "enabled": true,
+    "iterations": 8,
+    "max_cell_growth_fraction": 0.0
+  }
+}

@@ -1,0 +1,979 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://babelmesh.local/schema/project-1.schema.json",
+  "title": "BabelMesh project",
+  "description": "Versioned input contract for reproducible geometry and mesh generation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "units",
+    "cad",
+    "fluid_domain",
+    "background",
+    "sizing",
+    "boundary_layers",
+    "quality",
+    "resources",
+    "output"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "enum": [
+        1,
+        2
+      ]
+    },
+    "units": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "length",
+        "output_length"
+      ],
+      "properties": {
+        "length": {
+          "enum": [
+            "m",
+            "mm",
+            "cm",
+            "inch"
+          ]
+        },
+        "output_length": {
+          "const": "m"
+        }
+      }
+    },
+    "cad": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "imports",
+        "operations",
+        "groups"
+      ],
+      "properties": {
+        "imports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/stepImport"
+          }
+        },
+        "operations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/cadOperation"
+          }
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/physicalGroup"
+          }
+        },
+        "repair_tolerance": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "fluid_domain": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/externalDomain"
+        },
+        {
+          "$ref": "#/$defs/internalDomain"
+        }
+      ]
+    },
+    "background": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bounds"
+      ],
+      "properties": {
+        "bounds": {
+          "$ref": "#/$defs/bounds"
+        },
+        "cell_counts": {
+          "type": "array",
+          "items": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ],
+          "additionalItems": false,
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "uniform_cells": {
+          "type": "boolean",
+          "default": true
+        },
+        "cell_size": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "cell_counts"
+          ],
+          "not": {
+            "required": [
+              "cell_size"
+            ]
+          }
+        },
+        {
+          "required": [
+            "cell_size"
+          ],
+          "not": {
+            "required": [
+              "cell_counts"
+            ]
+          }
+        }
+      ]
+    },
+    "sizing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "minimum_size",
+        "maximum_size",
+        "max_level",
+        "sources"
+      ],
+      "properties": {
+        "minimum_size": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Adaptive refinement floor for the characteristic longest edge of newly split cells; the user-defined background grid may already be finer."
+        },
+        "maximum_size": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "surface_size": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Maximum physical cell edge (longest axis) in the CAD boundary-refinement band, in project length units; independent of CAD fit tolerance."
+        },
+        "surface_buffer_layers": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 8,
+          "default": 2
+        },
+        "max_level": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "balance_face_neighbors": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2,
+          "default": 1
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sizeSource"
+          }
+        },
+        "volume_size": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Target triangle/tetrahedron size in the transition region, in project units."
+        }
+      }
+    },
+    "boundary_layers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "targets"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "targets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/layerTarget"
+          }
+        },
+        "strict_coverage": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "profile",
+        "mode"
+      ],
+      "properties": {
+        "profile": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mode": {
+          "enum": [
+            "strict",
+            "permissive",
+            "diagnostic"
+          ]
+        },
+        "max_surface_deviation_m": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Explicit geometric tolerance in meters, overriding the default domain/local-size limit. Cell and face quality gates remain unchanged."
+        }
+      }
+    },
+    "resources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_cells",
+        "max_memory_mb",
+        "threads"
+      ],
+      "properties": {
+        "max_cells": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_memory_mb": {
+          "type": "integer",
+          "minimum": 128
+        },
+        "threads": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "directory",
+        "formats"
+      ],
+      "properties": {
+        "directory": {
+          "type": "string",
+          "minLength": 1
+        },
+        "formats": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "babelsim-v3",
+              "vtu",
+              "fluent-ascii",
+              "cgns",
+              "cgns-poly"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "overwrite": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "meshing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dimension"
+      ],
+      "properties": {
+        "dimension": {
+          "type": "integer",
+          "enum": [
+            2,
+            3
+          ]
+        },
+        "section_axis": {
+          "type": "string",
+          "enum": [
+            "x",
+            "y",
+            "z"
+          ]
+        },
+        "section_coordinate": {
+          "type": "number"
+        },
+        "thickness": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "core_buffer": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "dimension": {
+                "const": 2
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "section_axis",
+              "section_coordinate",
+              "thickness"
+            ]
+          },
+          "else": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "section_axis"
+                  ]
+                },
+                {
+                  "required": [
+                    "section_coordinate"
+                  ]
+                },
+                {
+                  "required": [
+                    "thickness"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "optimization": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "iterations": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30,
+          "default": 6
+        },
+        "relaxation": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "default": 0.5
+        },
+        "max_cell_growth_fraction": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.05,
+          "default": 0
+        },
+        "topology_swaps": {
+          "type": "boolean",
+          "default": true,
+          "description": "Try bounded 3-to-2 and 4-to-4 swaps only in 3D transition tetrahedra; preserve cavity skin and never add nodes or cells."
+        },
+        "merge_transition_cells": {
+          "type": "boolean",
+          "default": false
+        },
+        "max_merge_fraction": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.1,
+          "default": 0.1
+        }
+      }
+    }
+  },
+  "$defs": {
+    "point": {
+      "type": "array",
+      "items": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "additionalItems": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "bounds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "minimum",
+        "maximum"
+      ],
+      "properties": {
+        "minimum": {
+          "$ref": "#/$defs/point"
+        },
+        "maximum": {
+          "$ref": "#/$defs/point"
+        }
+      }
+    },
+    "stepImport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "file",
+        "length_unit"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "length_unit": {
+          "enum": [
+            "m",
+            "mm",
+            "cm",
+            "inch"
+          ]
+        },
+        "instance": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "identifier": {
+      "type": "string",
+      "pattern": "^[A-Za-z_][A-Za-z0-9_.-]*$"
+    },
+    "operationParameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "minimum": {
+          "$ref": "#/$defs/point"
+        },
+        "maximum": {
+          "$ref": "#/$defs/point"
+        },
+        "center": {
+          "$ref": "#/$defs/point"
+        },
+        "normal": {
+          "$ref": "#/$defs/point"
+        },
+        "start": {
+          "$ref": "#/$defs/point"
+        },
+        "end": {
+          "$ref": "#/$defs/point"
+        },
+        "axis_origin": {
+          "$ref": "#/$defs/point"
+        },
+        "direction": {
+          "$ref": "#/$defs/point"
+        },
+        "translation": {
+          "$ref": "#/$defs/point"
+        },
+        "rotation": {
+          "$ref": "#/$defs/point"
+        },
+        "radius": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "major_radius": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "minor_radius": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "bottom_radius": {
+          "type": "number",
+          "minimum": 0
+        },
+        "top_radius": {
+          "type": "number",
+          "minimum": 0
+        },
+        "height": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "angle_radians": {
+          "type": "number"
+        },
+        "closed": {
+          "type": "boolean"
+        },
+        "solid": {
+          "type": "boolean"
+        },
+        "scale": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "tolerance": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "wire": {
+          "$ref": "#/$defs/identifier"
+        },
+        "profile": {
+          "$ref": "#/$defs/identifier"
+        },
+        "shape": {
+          "$ref": "#/$defs/identifier"
+        },
+        "points": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/point"
+          },
+          "minItems": 2
+        }
+      }
+    },
+    "groupSelector": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "operation_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "entity_type": {
+          "enum": [
+            "vertex",
+            "edge",
+            "face",
+            "solid"
+          ]
+        },
+        "names": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "center": {
+          "$ref": "#/$defs/point"
+        },
+        "normal": {
+          "$ref": "#/$defs/point"
+        },
+        "tolerance": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "bounds": {
+          "$ref": "#/$defs/bounds"
+        },
+        "adjacent_group": {
+          "$ref": "#/$defs/identifier"
+        },
+        "exclude_centers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/point"
+          }
+        }
+      }
+    },
+    "sizeRegion": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "bounds": {
+          "$ref": "#/$defs/bounds"
+        },
+        "center": {
+          "$ref": "#/$defs/point"
+        },
+        "axis": {
+          "$ref": "#/$defs/point"
+        },
+        "radius": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "length": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "cad_group": {
+          "$ref": "#/$defs/identifier"
+        },
+        "other_cad_group": {
+          "$ref": "#/$defs/identifier"
+        },
+        "distance": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "max_radius": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Curvature source selector: select CAD faces with sampled local radius no greater than this value; independent of the cell target_size."
+        }
+      }
+    },
+    "cadOperation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "operation",
+        "inputs"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "operation": {
+          "enum": [
+            "point",
+            "line",
+            "arc",
+            "circle",
+            "spline",
+            "wire",
+            "plane",
+            "box",
+            "sphere",
+            "cylinder",
+            "cone",
+            "extrude",
+            "revolve",
+            "loft",
+            "shell",
+            "solid",
+            "transform",
+            "mirror",
+            "fuse",
+            "cut",
+            "common",
+            "split",
+            "import"
+          ]
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/identifier"
+          }
+        },
+        "parameters": {
+          "$ref": "#/$defs/operationParameters"
+        }
+      }
+    },
+    "physicalGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "kind",
+        "selector"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/identifier"
+        },
+        "kind": {
+          "enum": [
+            "wall",
+            "inlet",
+            "outlet",
+            "symmetry",
+            "generic"
+          ]
+        },
+        "selector": {
+          "$ref": "#/$defs/groupSelector"
+        }
+      }
+    },
+    "externalDomain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "outer_bounds",
+        "solids",
+        "seeds"
+      ],
+      "properties": {
+        "mode": {
+          "const": "external"
+        },
+        "outer_bounds": {
+          "$ref": "#/$defs/bounds"
+        },
+        "solids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "minItems": 1
+        },
+        "seeds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/point"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "internalDomain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "fluid_solids",
+        "seeds",
+        "caps"
+      ],
+      "properties": {
+        "mode": {
+          "const": "internal"
+        },
+        "fluid_solids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "minItems": 1
+        },
+        "seeds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/point"
+          },
+          "minItems": 1
+        },
+        "caps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/physicalGroup"
+          }
+        }
+      }
+    },
+    "sizeSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "target_size"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "kind": {
+          "enum": [
+            "box",
+            "sphere",
+            "cylinder",
+            "distance",
+            "cad_group",
+            "curvature",
+            "gap"
+          ]
+        },
+        "target_size": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "region": {
+          "$ref": "#/$defs/sizeRegion"
+        },
+        "transition_width": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "apply_to": {
+          "enum": [
+            "all",
+            "background",
+            "surface",
+            "transition"
+          ],
+          "default": "all"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "curvature"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "required": [
+              "region"
+            ],
+            "properties": {
+              "region": {
+                "required": [
+                  "cad_group",
+                  "max_radius"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "layerTarget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "group",
+        "first_layer",
+        "count",
+        "growth_ratio"
+      ],
+      "properties": {
+        "group": {
+          "$ref": "#/$defs/identifier"
+        },
+        "first_layer": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "growth_ratio": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 2
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": 2
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "meshing"
+        ],
+        "properties": {
+          "sizing": {
+            "required": [
+              "surface_size"
+            ]
+          },
+          "quality": {
+            "properties": {
+              "mode": {
+                "enum": [
+                  "strict",
+                  "diagnostic"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "not": {
+          "required": [
+            "meshing"
+          ]
+        },
+        "properties": {
+          "quality": {
+            "properties": {
+              "mode": {
+                "enum": [
+                  "strict",
+                  "permissive"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "suite_id": "babelmesh-m0-m8",
+  "status": "in_progress",
+  "quality_profile": "../quality/profiles/strict-cfd-v1.json",
+  "notes": [
+    "A planned test is not a pass. Status can become passed only with a recorded command and evidence artifact.",
+    "M1 CAD/STEP gate passed with primitive and boolean volumes, curves, hole faces, transforms, extrude/revolve/loft/split, metric normalization, named STEP assembly selection, external/internal domains, caps, surface report, and invalid-input checks.",
+    "M2 uniform Cartesian hex generation and BABELSIM_MESH v3 export passed direct BabelSim reader round-trips for 1, 8, and 24 cells, plus CLI output checks. CAD clipping, size adaptation, and layers remain later gates.",
+    "M3 analytic and CAD sizing sources, 2:1 face-edge-corner balance across multiple roots, one-coarse-to-four-fine shared subfaces, non-orphan topology, source/level/type VTU tags, and BabelSim v3 readback passed. Curvature is explicitly reported as a trimmed-face 3x3 UV sampling approximation. CAD clipping and boundary layers remain later gates.",
+    "2026-09-23: M4 rotated planar CAD quality improvement: default two-layer surface refinement buffer moves 2:1 transitions away from the wall; post-snap shared-face consolidation (relative warp 0.05) keeps BabelSim cells closed. Formal 30-degree 133,728-cell mesh passed the actual BabelSim reader and actual solver-quality probe: nonorthogonality max/P99 31.552/27.449 degrees, internal skew max/P99 0.244485/0.236957; geometry residual and relative volume error recorded in optimized-formal/mesh_report.json. That frozen formal run classified 512 near-collinear mapped cells as polyhedra; the remaining 111,360 regular hex cells have minimum scaled Jacobian 0.703808, with zero cells below 0.1. The full M4 required gate remains in_progress because curved features, bidirectional error, complete self-intersection checks, and staged quality rollback are still missing.",
+    "2026-09-23 M4 acceptance audit, P0 quality-gate fix, sphere buffer experiment, and diagnostic mesh: M4 remains in_progress and is not accepted. Current source no longer demotes six-face/eight-corner cells based only on scaled Jacobian; affine-shear regression proves a <0.1 Jacobian stays visible, and polyhedral audit plus 15/30/45 degree planar feature regressions pass. Strict sphere test still fails with visible minimum scaled Jacobian 0.013420, CAD deviation 0.000851 m > 0.000346 m, and nonorthogonality P99 64.500804 > 60 deg. Surface buffer 2 to 4 leaves deviation/Jacobian unchanged and improves P99 only to 62.073447 deg, still failing. A separately labeled permissive diagnostic mesh passes actual BabelSim read/validate but has 16,808 independent negative-Jacobian hexes and nonorthogonality max/P99 81.0015/76.8256 deg; it is not acceptance evidence. Bad cells form a connected near-sphere band, including 1,808 cells with no direct sphere wall face, indicating core-deformation propagation as well as multi-wall topology issues. Bidirectional CAD distance, complete intersection/overlap tests and cylinder/rounded/tail/gap/subtraction cases remain missing. Evidence: acceptance/evidence/m4-acceptance-20260923/acceptance.md and sphere-diagnostic; public-source plan: docs/M4-公开资料质量优化方案.md.",
+    "2026-09-23 follow-up: core/boundary snap fractions are decoupled. Latest strict sphere boundary deviation is 0.000258 m <= 0.000346 m, but baseline min Jacobian 0.013420 and nonorth max/P99 70.430/62.004 deg fail. Experimental real split of 16,544 bad hexes into six face pyramids raises remaining-hex min Jacobian to 0.137355, but nonorth max/P99 degrades to 79.133/72.414 deg and skew max/P99 to 1.529/0.758, so M4 still fails and candidate rolls back. Unit-level pyramid topology/volume test passes. Evidence: acceptance/evidence/m4-acceptance-20260923/pyramid-reconstruction/.",
+    "2026-09-23 additional M4 experiment: one-level globally finer strict sphere request (surface_size 0.011 m, minimum 0.0078125 m, max_level 5) was rejected during adaptive background refinement under max_cells=500000, before CAD snapping; no mesh was written. This is not acceptance evidence and shows uniform refinement cannot fit the current case budget. Evidence: acceptance/evidence/m4-acceptance-20260923/pyramid-reconstruction/fine-sphere-project.json and fine-sphere-run.log.",
+    "2026-09-24 surface sizing contract: CAD surface refinement requires one explicit scalar sizing.surface_size maximum boundary-zone cell edge; surface_size_xyz was removed because OctreeForest splits x/y/z together. CAD fit tolerance quality.max_surface_deviation_m is independent; curvature target_size controls cell size while region.max_radius selects curved faces. minimum_size now blocks dyadic splits that would make child characteristic edge smaller than the floor, and max_level remains a separate cap. M0 (13 tests), M3, surface-distance tests, and final M4 sphere-domain test passed. Full M4 is still in_progress; required shape coverage and self-intersection/overlap checks are not complete.",
+    "2026-09-24 M4 rerun with an explicitly configured 3 mm CAD fit tolerance: make MODE=release -j4 test exited 0; sphere sampled deviation 0.000777675 m, relative volume error 1.87372e-05, nonorthogonality max/P99 63.9377/57.3752 deg, and minimum regular-hex scaled Jacobian 0.100414. The previously failing 25 mm cylinder still fails strict generation: sampled deviation 0.003019 m exceeds 0.003000 m and rejected-candidate nonorthogonality max is 141.111046 deg. A controlled optimizer-limit 3-to-12 experiment accepted 7 moves but retained 0.003019 m deviation and 141.056540 deg maximum nonorthogonality; the ineffective change was reverted. The full M4 suite remains in_progress. Evidence: acceptance/evidence/m4-geometry-tradeoff-20260924/m4-three-mm/README.md, acceptance/evidence/m4-geometry-tradeoff-20260924/m4-three-mm/make-test.log, acceptance/evidence/m4-geometry-tradeoff-20260924/m4-three-mm/cylinder25mm/generate.log, and acceptance/evidence/m4-geometry-tradeoff-20260924/m4-three-mm-opt12/cylinder25mm/generate.log."
+  ],
+  "gates": [
+    {
+      "id": "M0-contract",
+      "stage": "M0",
+      "required": true,
+      "status": "passed",
+      "command": "make -j4 test",
+      "evidence": "tests/m0_contract_test.py"
+    },
+    {
+      "id": "M1-cad-primitives-booleans-step",
+      "stage": "M1",
+      "required": true,
+      "status": "passed",
+      "command": "make -j4 test",
+      "evidence": "tests/m1_cad_test.cpp; tests/fixtures/gmsh-box-1000mm.step"
+    },
+    {
+      "id": "M2-uniform-cartesian-and-v3-reader",
+      "stage": "M2",
+      "required": true,
+      "status": "passed",
+      "command": "make -j4 test",
+      "evidence": "tests/m2_cartesian_test.cpp; tests/m0_contract_test.py"
+    },
+    {
+      "id": "M3-adaptive-conforming-topology",
+      "stage": "M3",
+      "required": true,
+      "status": "passed",
+      "command": "make -j4 test",
+      "evidence": "tests/m3_adaptive_test.cpp; tests/m0_contract_test.py"
+    },
+    {
+      "id": "M4-surface-snapping-and-fluid-extraction",
+      "stage": "M4",
+      "required": true,
+      "status": "in_progress",
+      "command": "make -j4 test",
+      "evidence": "tests/m4_domain_test.cpp; tests/m0_contract_test.py; acceptance/evidence/m4-geometry-tradeoff-20260924/m4-three-mm/make-test.log; acceptance/evidence/m4-geometry-tradeoff-20260924/m4-three-mm/cylinder25mm/generate.log"
+    },
+    {
+      "id": "M4-planar-rotated-box-quality-regression",
+      "stage": "M4",
+      "required": true,
+      "status": "passed",
+      "command": "make -j2 build/debug/bin/m4_feature_test build/debug/bin/m4_solver_quality_probe && build/debug/bin/m4_feature_test acceptance/evidence/m4-rotated/project.json && build/debug/bin/babelmesh generate acceptance/evidence/m4-rotated/project.json --cad-staircase --out /tmp/m4-formal-optimized && build/debug/bin/m4_solver_quality_probe /tmp/m4-formal-optimized/mesh.bsm && python3 tools/audit_hex_jacobians.py /tmp/m4-formal-optimized/mesh.vtu --bsm /tmp/m4-formal-optimized/mesh.bsm",
+      "evidence": "tests/m4_feature_test.cpp; acceptance/evidence/m4-rotated/optimized-formal/mesh.bsm; acceptance/evidence/m4-rotated/optimized-formal/mesh_report.json; acceptance/evidence/m4-rotated/optimized-formal/solver-quality.json; acceptance/evidence/m4-rotated/optimized-formal/hex-jacobians.json"
+    },
+    {
+      "id": "M5-baseline-boundary-layers",
+      "stage": "M5",
+      "required": true,
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "M6-complex-boundary-layer-termination",
+      "stage": "M6",
+      "required": true,
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "M7-directional-and-marine-mesh",
+      "stage": "M7",
+      "required": true,
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "M8-manufactured-solution-poiseuille",
+      "stage": "M8",
+      "required": true,
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "M8-mpi-1-2-4-ranks",
+      "stage": "M8",
+      "required": true,
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "M8-performance-100k-500k-1m",
+      "stage": "M8",
+      "required": true,
+      "status": "planned",
+      "evidence": ""
+    }
+  ]
+}

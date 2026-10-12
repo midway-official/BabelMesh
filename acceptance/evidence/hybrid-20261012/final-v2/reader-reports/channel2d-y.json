@@ -1,0 +1,121 @@
+{
+  "all": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 272,
+      "max": 0.0,
+      "p99": 0.0
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 112,
+      "max": 2.80866677486136e-15,
+      "p99": 2.80866677486136e-15
+    },
+    "worst_angle_face": 0,
+    "worst_skew_face": 25
+  },
+  "boundary": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 160,
+      "max": 0.0,
+      "p99": 0.0
+    },
+    "skew": null,
+    "worst_angle_face": 0,
+    "worst_skew_face": -1
+  },
+  "cells": 64,
+  "combined_owner_neighbour_interfaces_diagnostic_only": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 112,
+      "max": 0.0,
+      "p99": 0.0
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 112,
+      "max": 2.80866677486136e-15,
+      "p99": 2.80866677486136e-15
+    },
+    "worst_angle_face": 3,
+    "worst_skew_face": 25
+  },
+  "geometry": "actual BabelSim face area centroids and signed-volume cell centroids",
+  "internal": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 112,
+      "max": 0.0,
+      "p99": 0.0
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 112,
+      "max": 2.80866677486136e-15,
+      "p99": 2.80866677486136e-15
+    },
+    "worst_angle_face": 3,
+    "worst_skew_face": 25
+  },
+  "mesh": "/home/midway/BabelMesh/acceptance/evidence/hybrid-20261012/final-v2/channel2d-y/mesh.bsm",
+  "other_faces": {
+    "nonorth": {
+      "above_limit": 0,
+      "count": 272,
+      "max": 0.0,
+      "p99": 0.0
+    },
+    "skew": {
+      "above_limit": 0,
+      "count": 112,
+      "max": 2.80866677486136e-15,
+      "p99": 2.80866677486136e-15
+    },
+    "worst_angle_face": 0,
+    "worst_skew_face": 25
+  },
+  "skew_definition": "distance(face centroid, cell-centre line intersection with face plane) / sqrt(norm(Sf))",
+  "triangular_faces": {
+    "nonorth": null,
+    "skew": null,
+    "worst_angle_face": -1,
+    "worst_skew_face": -1
+  },
+  "worst_examples": [
+    {
+      "center": [
+        0.0625,
+        0.45,
+        0.0625
+      ],
+      "face": 0,
+      "neighbour": -1,
+      "owner": 0,
+      "owner_center": [
+        0.06250000000000001,
+        0.5000000000000001,
+        0.06250000000000001
+      ],
+      "vertex_count": 4
+    },
+    {
+      "center": [
+        0.125,
+        0.5,
+        0.5625
+      ],
+      "face": 25,
+      "neighbour": 12,
+      "owner": 4,
+      "owner_center": [
+        0.06250000000000001,
+        0.5000000000000002,
+        0.5625000000000002
+      ],
+      "vertex_count": 4
+    }
+  ]
+}

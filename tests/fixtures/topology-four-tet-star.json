@@ -1,0 +1,213 @@
+{
+  "checkpoint_version": 1,
+  "generation_dimension": 3,
+  "extrusion_axis": 2,
+  "extrusion_thickness_m": 0,
+  "points_m": [
+    [
+      -0.32487372159893396,
+      -0.5354634271206193,
+      0.5891188696624464
+    ],
+    [
+      0.034234971374686785,
+      -0.25170328274028864,
+      -0.8155102714439034
+    ],
+    [
+      0.9182761569352521,
+      0.0,
+      0.0
+    ],
+    [
+      8.432497320481553e-17,
+      1.3771313208596283,
+      0.0
+    ],
+    [
+      -0.7045440655939196,
+      8.628176347878565e-17,
+      0.0
+    ],
+    [
+      -1.9908967739169512e-16,
+      -1.0837937247447407,
+      0.0
+    ]
+  ],
+  "cells": [
+    {
+      "type": 10,
+      "region": 2,
+      "vertices": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "poly_faces": []
+    },
+    {
+      "type": 10,
+      "region": 2,
+      "vertices": [
+        0,
+        3,
+        1,
+        4
+      ],
+      "poly_faces": []
+    },
+    {
+      "type": 10,
+      "region": 2,
+      "vertices": [
+        0,
+        4,
+        1,
+        5
+      ],
+      "poly_faces": []
+    },
+    {
+      "type": 10,
+      "region": 2,
+      "vertices": [
+        0,
+        5,
+        1,
+        2
+      ],
+      "poly_faces": []
+    }
+  ],
+  "faces": [
+    {
+      "owner": 0,
+      "neighbour": 3,
+      "patch": -1,
+      "vertices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "owner": 0,
+      "neighbour": -1,
+      "patch": 0,
+      "vertices": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "owner": 0,
+      "neighbour": -1,
+      "patch": 0,
+      "vertices": [
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "owner": 0,
+      "neighbour": 1,
+      "patch": -1,
+      "vertices": [
+        1,
+        0,
+        3
+      ]
+    },
+    {
+      "owner": 1,
+      "neighbour": -1,
+      "patch": 0,
+      "vertices": [
+        0,
+        3,
+        4
+      ]
+    },
+    {
+      "owner": 1,
+      "neighbour": -1,
+      "patch": 0,
+      "vertices": [
+        3,
+        1,
+        4
+      ]
+    },
+    {
+      "owner": 1,
+      "neighbour": 2,
+      "patch": -1,
+      "vertices": [
+        1,
+        0,
+        4
+      ]
+    },
+    {
+      "owner": 2,
+      "neighbour": -1,
+      "patch": 0,
+      "vertices": [
+        0,
+        4,
+        5
+      ]
+    },
+    {
+      "owner": 2,
+      "neighbour": -1,
+      "patch": 0,
+      "vertices": [
+        4,
+        1,
+        5
+      ]
+    },
+    {
+      "owner": 2,
+      "neighbour": 3,
+      "patch": -1,
+      "vertices": [
+        1,
+        0,
+        5
+      ]
+    },
+    {
+      "owner": 3,
+      "neighbour": -1,
+      "patch": 0,
+      "vertices": [
+        0,
+        5,
+        2
+      ]
+    },
+    {
+      "owner": 3,
+      "neighbour": -1,
+      "patch": 0,
+      "vertices": [
+        5,
+        1,
+        2
+      ]
+    }
+  ],
+  "patches": [
+    {
+      "name": "wall",
+      "kind": "wall"
+    }
+  ],
+  "metadata": {}
+}
